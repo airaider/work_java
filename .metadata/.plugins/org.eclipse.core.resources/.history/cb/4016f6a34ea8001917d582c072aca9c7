@@ -1,0 +1,21 @@
+package chapter03;
+
+public class CastTest {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		byte b1=10, b2=30;
+		int i1 = b1+b2;
+		byte b3 = (byte)(b1+b2);
+		
+		char a='a';
+		int i2 = a;
+		System.out.println(i2);
+		
+
+		int i2 = a+1;
+		System.out.println(char(i2));
+		
+	}
+
+}

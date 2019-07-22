@@ -1,0 +1,22 @@
+
+public class DataTypeTest {
+
+	public static void main(String[] args) {
+
+		/*
+		 * 
+		 * 
+		 * 
+		 */
+		byte b1=1, b2=3;
+//		byte b3 = b1+b2;
+		
+		
+		long
+		
+//		실수는 double이 기본 타입이므로 float인 경우 f, F로 표시해야 한다.		
+		float f1=3.14f, f2=3.14F;
+
+	}
+
+}

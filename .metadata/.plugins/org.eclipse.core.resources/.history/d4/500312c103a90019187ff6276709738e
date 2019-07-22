@@ -1,0 +1,31 @@
+package chapter03;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.PriorityQueue;
+import java.util.Scanner;
+import java.util.StringTokenizer;
+
+public class array_561 {
+	static int[] ar;
+	public static void main(String[] args) throws IOException {
+		Scanner sc = new Scanner(System.in);
+		ar = new int[10];
+		for(int i=0;i<10;i++) {
+			ar[i]=sc.nextInt();
+		}
+		PriorityQueue<Integer> hd = new PriorityQueue<Integer>((x, y) -> y - x);
+		PriorityQueue<Integer> hu = new PriorityQueue<Integer>();
+		for(int i=0;i<10;i++) {
+			if(ar[i]<100) {
+				hd.add(ar[i]);
+			}
+			if(ar[i]>=100) {
+				hu.add(ar[i]);
+			}
+		}
+		System.out.println(hd.poll()+" "+hu.poll());
+	}
+
+}

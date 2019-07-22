@@ -1,0 +1,24 @@
+package chapter03;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.util.StringTokenizer;
+
+public class array_561 {
+
+	public static void main(String[] args) throws IOException {
+		// TODO Auto-generated method stub
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		String sr = br.readLine();
+		int[] ar = new int[sr.length()];
+		StringTokenizer st = new StringTokenizer(sr);
+		for (int i = 0; i < sr.length(); i++) {
+			ar[i]=Integer.parseInt(st.nextToken());
+		}
+		for (int i = 0; i < ar.length; i++) {
+			System.out.println(ar[i]);
+		}
+	}
+
+}

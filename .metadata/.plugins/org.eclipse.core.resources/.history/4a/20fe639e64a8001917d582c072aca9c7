@@ -1,0 +1,32 @@
+package chapter03;
+
+import java.util.Scanner;
+
+public class whileTest {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int n;
+		double sum=0;
+		double count=0;
+		while(true) {
+			n=scan.nextInt();
+			if(n==100) {
+				sum+=n;
+				++count;
+				break;
+			}
+			else {
+				sum+=n;
+				++count;
+			}
+		}
+		double avg=sum/count;
+		System.out.println(Math.round(sum));
+		System.out.println(avg);
+	}
+
+}
+
+//		1 2 3 4 5 6 7 8 9 10 100
+

@@ -1,0 +1,36 @@
+package chapter03;
+
+public class OperatorTest {
+
+	public static void main(String[] args) {
+		/*
+		 * >>						8 >> 2
+		 * 비트를 오른쪽으로 이동	0000 1000    0000 0010
+		 * 이동한 곳에는 sign bit가 채워짐
+		 * 2의 n승으로 나눈 효과
+		 */
+		
+		int num1 = 8;
+		int num2 = -8;
+		
+		/*
+		 * printf(String format, Object ...args)
+		 * %s	String
+		 * %d	정수
+		 * %f	실수, 	%.소수자리수f(반올림 처리)
+		 * %c	문자
+		 * %b	논리
+		 */
+		System.out.printf("8 >> 2 : %d \n", num1 >> 2);
+		System.out.printf("-8 >> 2 : %d \n", num2 >> 2);
+		
+		/*
+		 * >>>
+		 * 비트를 오른쪽으로 이동
+		 * 왼쪽의 빈칸을 0으로 채움
+		 */
+		System.out.printf("8 >>> 2 : %d \n", num1 >> 2);
+		System.out.printf("-8 >>> 2 : %d \n", num2 >>> 2);
+	}
+
+}

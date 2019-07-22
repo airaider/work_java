@@ -1,0 +1,17 @@
+package com.ssafy.java;
+
+public class AlphaTest1 {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		char a="A";
+		for(int i=0;i<5;i++) {
+			for(int j=0;j<=i;j++) {
+				int b=a+j;
+				System.out.print(b);
+			}
+			System.out.println();
+		}
+	}
+
+}
