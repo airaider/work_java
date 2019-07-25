@@ -2,7 +2,9 @@ package com.ssafy;
 
 import java.util.Calendar;
 
-public class Magazine {
+import wsjava05.Book;
+
+public class Magazine extends Book  {
 	private String isbn;
 	private String title;
 	private String author;
