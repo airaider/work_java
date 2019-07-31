@@ -41,12 +41,26 @@ public class Employee {
 		}else this.salary = salary;
 		
 	}
-	public String toString() {
-		return "사원번호:"+getEmpno()+" 이름:"+getName()+" 급여:"+getSalary();
-	}
-	void test() {
+//	public String toString() {
+//		return "사원번호:"+getEmpno()+" 이름:"+getName()+" 급여:"+getSalary();
+//	}
+	public void test() {
 		System.out.println("Employee test함수 입니다");
 	}
+	public int hashCode() {
+		int empnoHash = empno !=null ? empno.hashCode() :1;
+		int nameHash = name !=null? name.hashCode():1;
+		return empnoHash ^ nameHash ^ salary;
+	}
+	
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder(50);
+		builder.append("Employee [empno=").append(empno).append(", name=").append(name).append(", salary=")
+				.append(salary).append("]");
+		return builder.toString();
+	}
+
 	protected void service() {
 		System.out.println("Employee service함수 입니다");
 	}

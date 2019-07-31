@@ -1,18 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<section name="org.eclipse.ltk.ui.refactoring.settings">
-		<item value="false" key="renameSubpackages"/>
-		<item value="false" key="updateQualifiedNames"/>
-		<item value="*" key="patterns"/>
-		<item value="false" key="updateSimilarElements"/>
-		<item value="false" key="renameSetter"/>
-		<item value="1" key="updateSimilarElementsMatchStrategy"/>
-		<item value="false" key="updateTextualMatches"/>
-		<item value="false" key="renameGetter"/>
-	</section>
-	<section name="GenerateConstructorUsingFieldsSelectionDialog">
-		<item value="false" key="OmitCallToSuper"/>
-	</section>
+	<item value="true" key="Replace"/>
+	<item value="true" key="Annotations"/>
+	<item value="true" key="Comments"/>
+	<item value="false" key="InstanceOf"/>
 	<section name="org.eclipse.jdt.internal.ui.packageview.PackageExplorerPart">
 		<item value="2" key="layout"/>
 		<item value="true" key="group_libraries"/>
@@ -26,6 +17,75 @@
 		<item value="678" key="DIALOG_HEIGHT"/>
 		<item value="703" key="DIALOG_X_ORIGIN"/>
 		<item value="76" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="SourceActionDialog.constructors">
+		<item value="false" key="SynchronizedModifier"/>
+		<item value="false" key="Comments"/>
+		<item value="2" key="VisibilityModifier"/>
+		<item value="false" key="FinalModifier"/>
+	</section>
+	<section name="javadoc">
+		<item value="private" key="access"/>
+		<item value="false" key="noindex"/>
+		<item value="C:\SSAFY\work_java\JavaSE\javadoc.xml" key="antpath"/>
+		<item value="false" key="nodeprecatedlist"/>
+		<item value="true" key="use"/>
+		<item value="true" key="author"/>
+		<item value="false" key="nodeprecated"/>
+		<item value="false" key="nonavbar"/>
+		<item value="" key="docletpath"/>
+		<item value="C:\Program Files\Zulu\zulu-8\bin\javadoc.exe" key="javadoc_command_history"/>
+		<item value="1.8" key="source"/>
+		<item value="true" key="version"/>
+		<item value="" key="docletname"/>
+		<item value="true" key="splitindex"/>
+		<item value="true" key="fromStandard"/>
+		<item value="false" key="notree"/>
+		<item value="C:\SSAFY\work_java\JavaSE\doc" key="destdir"/>
+		<item value="false" key="openinbrowser"/>
+		<section name="projects">
+		</section>
+	</section>
+	<section name="OverrideMethodDialog">
+		<item value="true" key="showtypes"/>
+	</section>
+	<section name="RenameInformationPopup">
+	</section>
+	<section name="DialogBounds_AddUnimplementedConstructorsDialog">
+		<item value="531" key="DIALOG_WIDTH"/>
+		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
+		<item value="627" key="DIALOG_HEIGHT"/>
+		<item value="703" key="DIALOG_X_ORIGIN"/>
+		<item value="110" key="DIALOG_Y_ORIGIN"/>
+	</section>
+	<section name="nls_accessor_history">
+		<section name="0">
+			<item value="Messages" key="accessorName"/>
+			<item value="=JavaSE/src&lt;chapter01" key="bundlePackage"/>
+			<item value="messages.properties" key="bundleName"/>
+			<item value="=JavaSE/src&lt;chapter01" key="accessorPackage"/>
+		</section>
+	</section>
+	<section name="completion_proposal_size">
+	</section>
+	<section name="AddGetterSetterDialog">
+		<item value="false" key="SortOrdering"/>
+		<item value="false" key="RemoveFinal"/>
+	</section>
+	<section name="JavaElementSearchActions">
+	</section>
+	<section name="org.eclipse.ltk.ui.refactoring.settings">
+		<item value="false" key="renameSubpackages"/>
+		<item value="false" key="updateQualifiedNames"/>
+		<item value="*" key="patterns"/>
+		<item value="false" key="updateSimilarElements"/>
+		<item value="false" key="renameSetter"/>
+		<item value="1" key="updateSimilarElementsMatchStrategy"/>
+		<item value="false" key="updateTextualMatches"/>
+		<item value="false" key="renameGetter"/>
+	</section>
+	<section name="GenerateConstructorUsingFieldsSelectionDialog">
+		<item value="false" key="OmitCallToSuper"/>
 	</section>
 	<section name="org.eclipse.jdt.internal.ui.dialogs.FilteredTypesSelectionDialog">
 		<item value="true" key="ShowStatusLine"/>
@@ -45,11 +105,12 @@
 	<section name="OptionalMessageDialog.hide.">
 		<item value="true" key="org.eclipse.jdt.ui.typecomment.deprecated"/>
 	</section>
-	<section name="SourceActionDialog.constructors">
-		<item value="false" key="SynchronizedModifier"/>
-		<item value="false" key="Comments"/>
-		<item value="2" key="VisibilityModifier"/>
-		<item value="false" key="FinalModifier"/>
+	<section name="DialogBounds_GenerateHashCodeEqualsDialog">
+		<item value="516" key="DIALOG_WIDTH"/>
+		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
+		<item value="573" key="DIALOG_HEIGHT"/>
+		<item value="710" key="DIALOG_X_ORIGIN"/>
+		<item value="146" key="DIALOG_Y_ORIGIN"/>
 	</section>
 	<section name="DialogBounds_OverrideMethodDialog">
 		<item value="539" key="DIALOG_WIDTH"/>
@@ -76,34 +137,14 @@
 		<item value="600" key="width"/>
 		<item value="400" key="height"/>
 	</section>
-	<section name="javadoc">
-		<item value="private" key="access"/>
-		<item value="false" key="noindex"/>
-		<item value="C:\SSAFY\work_java\JavaSE\javadoc.xml" key="antpath"/>
-		<item value="false" key="nodeprecatedlist"/>
-		<item value="true" key="use"/>
-		<item value="true" key="author"/>
-		<item value="false" key="nodeprecated"/>
-		<item value="false" key="nonavbar"/>
-		<item value="" key="docletpath"/>
-		<item value="C:\Program Files\Zulu\zulu-8\bin\javadoc.exe" key="javadoc_command_history"/>
-		<item value="1.8" key="source"/>
-		<item value="true" key="version"/>
-		<item value="" key="docletname"/>
-		<item value="true" key="splitindex"/>
-		<item value="true" key="fromStandard"/>
-		<item value="false" key="notree"/>
-		<item value="C:\SSAFY\work_java\JavaSE\doc" key="destdir"/>
-		<item value="false" key="openinbrowser"/>
-		<section name="projects">
-		</section>
-	</section>
 	<section name="SourceActionDialog.methods">
 		<item value="true" key="IgnoreDefault"/>
 		<item value="false" key="SynchronizedModifier"/>
+		<item value="false" key="Blocks"/>
 		<item value="false" key="Comments"/>
 		<item value="1" key="VisibilityModifier"/>
-		<item value="0" key="StringStyle"/>
+		<item value="false" key="InstanceOf"/>
+		<item value="2" key="StringStyle"/>
 		<item value="0" key="ToStringTemplateSelected"/>
 		<item value="false" key="LimitElements"/>
 		<item value="false" key="SkipNull"/>
@@ -113,37 +154,9 @@
 	<section name="AddUnimplementedConstructorsDialog">
 		<item value="false" key="OmitCallToSuper"/>
 	</section>
-	<section name="OverrideMethodDialog">
-		<item value="true" key="showtypes"/>
-	</section>
-	<section name="RenameInformationPopup">
-	</section>
-	<section name="DialogBounds_AddUnimplementedConstructorsDialog">
-		<item value="531" key="DIALOG_WIDTH"/>
-		<item value="1|맑은 고딕|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕" key="DIALOG_FONT_NAME"/>
-		<item value="627" key="DIALOG_HEIGHT"/>
-		<item value="703" key="DIALOG_X_ORIGIN"/>
-		<item value="110" key="DIALOG_Y_ORIGIN"/>
-	</section>
 	<section name="NewPackageWizardPage">
 		<item value="false" key="create_package_info_java"/>
 	</section>
 	<section name="quick_assist_proposal_size">
-	</section>
-	<section name="nls_accessor_history">
-		<section name="0">
-			<item value="Messages" key="accessorName"/>
-			<item value="=JavaSE/src&lt;chapter01" key="bundlePackage"/>
-			<item value="messages.properties" key="bundleName"/>
-			<item value="=JavaSE/src&lt;chapter01" key="accessorPackage"/>
-		</section>
-	</section>
-	<section name="completion_proposal_size">
-	</section>
-	<section name="AddGetterSetterDialog">
-		<item value="false" key="SortOrdering"/>
-		<item value="false" key="RemoveFinal"/>
-	</section>
-	<section name="JavaElementSearchActions">
 	</section>
 </section>

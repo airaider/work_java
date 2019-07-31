@@ -4,7 +4,7 @@ public class PolymorphismTest {
 
 	public static void main(String[] args) {
 		/** Reference Polymorphism
-		 * 	- Super타빙ㅂ의 변수로 Sub타입의 객체를 참조할 수 있다.
+		 * 	- Super타입의 변수로 Sub타입의 객체를 참조할 수 있다.
 		 */
 		Employee emp1 = new Employee();
 		emp1 = new Manager();			//다형성
@@ -53,7 +53,7 @@ public class PolymorphismTest {
 		System.out.println(emp2.toString());
 		
 		/**Virtual Invocation(Dynamic Binding == Dynamic linking)
-		 * 다형성 관계에서 매서드가 override된 경우라면 override 된 함수가 호출괸
+		 * 다형성 관계에서 매서드가 override된 경우라면 override 된 함수가 호출됨
 		 * 
 		 */
 		

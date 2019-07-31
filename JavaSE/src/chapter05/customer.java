@@ -6,7 +6,7 @@ public class customer {
 	private String address;
 	/*
 	 * 생성자
-	 * - 객체 생성시 new에 의해 호추
+	 * - 객체 생성시 new에 의해 호출
 	 * - 객체의 초기화를 담당
 	 * - 클래스에 생성자가 선언되어 있지 않다면 컴파일러가 인자가 없고 내용이 없는 생성자를 
 	 * 	  컴파일시 추가한다 ==> Default Constructor
