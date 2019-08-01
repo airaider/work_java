@@ -1,5 +1,6 @@
 package hwjava07;
 
+import java.util.List;
 
 public class ProductTest {
 
@@ -32,8 +33,9 @@ public class ProductTest {
 			System.out.println(manager.tvsearch().get(i));
 		}
 		System.out.println("tv 50인치 검색");
-		for(int i=0;i<manager.tv50().size();i++) {
-			System.out.println(manager.tv50().get(i));
+		List<Product> tv50 = manager.tv50();
+		for (Product product : tv50) {
+			System.out.println(product);
 		}
 		//Refrigerator검색
 		System.out.println("냉장고검색");

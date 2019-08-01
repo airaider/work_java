@@ -2,34 +2,39 @@ package com.ssafy.model.dao;
 
 import java.util.List;
 
+import com.ssafy.model.dto.CanNotFoundException;
+import com.ssafy.model.dto.DuplicateException;
 import com.ssafy.model.dto.Employee;
 
 public interface EmployeeDao {
+	/**
+	 * 사원번호에 해당한  사원을 찾아서 정보를 리턴하는 기능의 함수 
+	 * @param empno
+	 * @return
+	 */
+	Employee search(String empno) throws CanNotFoundException;
 
 	/**
-	 * 사원번호에 해당하는 사원 정보가 저장된 배열의 index를 리턴
-	 * @param empno 찾을 사원 번호
-	 * @return		사원 번호에 해당하는 사원이 저장된 index를 리턴
+	 * 사원 정보를 등록하는 기능
+	 * @param emp
 	 */
-	int findIndex(String empno);
-
-	/**사원번호에 해당된 사원을 찾아서 정보를 리턴하는 기능의 함수*/
-	Employee search(String empno);
+	void add(Employee emp) throws DuplicateException;
 
 	/**
-	 * 다형성을 메서드 인자에 적용
-	 * 다형성에 의해 모든 sub 타입은 super로 형변환이 자동으로 되기 때문에
-	 * 매서드 인자를 super타입으로 선언하면 모든 sub타입의 객체도 인자로 전달 받을 수 있다.
-	 * ==> 매서드 Overloading을 줄일 수 있다
+	 * 사원 정보를 수정하는 기능 
+	 * @param emp
 	 */
-	void add(Employee emp);
+	void update(Employee emp)throws CanNotFoundException;
 
-	void update(Employee emp);
+	/**
+	 * 사원정보를 삭제하는 기능
+	 * @param empno
+	 */
+	void remove(String empno)throws CanNotFoundException;
 
-	void remove(String empno);
-	
 	void close();
 	
-	List<Employee> seachAll();
-
+	List<Employee> searchAll();
 }
+
+

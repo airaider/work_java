@@ -161,7 +161,7 @@ public class ProductMgrImpl implements IProductMgr {
 	@Override
 	public void print() {
 		for (int i = 0,size=products.size(); i < size; i++) {
-			System.out.println(products.get(i)); 
+			System.out.println(products.get(i).toString()); 
 		}
 		
 	}

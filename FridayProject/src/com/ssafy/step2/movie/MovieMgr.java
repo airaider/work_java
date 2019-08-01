@@ -10,7 +10,6 @@ public class MovieMgr {
 	private static MovieMgr instance = new MovieMgr();
 	
 	private MovieMgr() {
-		super();
 	}
 	public static MovieMgr getInstance() {
 		return instance;

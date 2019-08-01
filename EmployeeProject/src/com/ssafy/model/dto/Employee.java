@@ -1,6 +1,8 @@
 package com.ssafy.model.dto;
 
-public class Employee {
+import java.io.Serializable;
+
+public class Employee implements Serializable {
 	private String empno;
 	private String name;
 	private int salary;

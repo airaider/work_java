@@ -1,6 +1,9 @@
-package com.ssafy.model.dto;
+
 
 import com.ssafy.model.dao.EmployeePolyManager2;
+import com.ssafy.model.dto.Employee;
+import com.ssafy.model.dto.Engineer;
+import com.ssafy.model.dto.Manager;
 
 public class EmployeeTest {
 
