@@ -138,7 +138,7 @@ public class ProductMgrImpl implements IProductMgr {
 		try {
 			fos = new FileOutputStream(filename);
 			oos = new ObjectOutputStream(fos);
-			oos.writeObject(oos);
+			oos.writeObject(products);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}finally {
