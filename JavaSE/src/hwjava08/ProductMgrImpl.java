@@ -129,7 +129,6 @@ public class ProductMgrImpl implements IProductMgr {
 	@Override
 	public void close() {
 		save();
-		System.exit(0);
 
 	}
 	public void save() {

@@ -8,7 +8,10 @@ import java.awt.event.ActionListener;
 import java.awt.event.ItemEvent;
 import java.awt.event.ItemListener;
 import java.awt.event.MouseAdapter;
+import java.io.ObjectOutputStream;
+import java.net.Socket;
 import java.util.List;
+
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
@@ -17,19 +20,20 @@ import javax.swing.JScrollPane;
 import javax.swing.JTable;
 import javax.swing.JTextField;
 import javax.swing.table.DefaultTableModel;
+
 import com.ssafy.model.dao.EmployeeDao;
 import com.ssafy.model.dto.CanNotFoundException;
-import com.ssafy.model.dto.DuplicateException;
 import com.ssafy.model.dto.Employee;
 import com.ssafy.model.dto.Engineer;
 import com.ssafy.model.dto.Manager;
+import com.ssafy.util.IOUtil;
 public class EmployeeUI {
 	private static final int EMP_STATE=1;
 	private static final int MGR_STATE=2;
 	private static final int ENG_STATE=3;
 	private JFrame main;
 	private MessageDialog  dialog;
-	private JButton insertBt, updateBt, deleteBt, findBt, exitBt;
+	private JButton insertBt, updateBt, deleteBt, findBt, exitBt, sendBt;
 	private JLabel addInfoL;
 	private JTextField empnoTf, nameTf, salaryTf, addInfoTf;
 	private Checkbox empCheck, mgrCheck, engCheck;
@@ -49,6 +53,8 @@ public class EmployeeUI {
 					insert();
 				}else if (src == findBt) {
 					findEmployee();
+				}else if (src == sendBt) {
+					send();
 				}else if (src == exitBt) {
 					model.close();
 				} else {
@@ -59,7 +65,47 @@ public class EmployeeUI {
 				dialog.show(err.getMessage());
 			}	
 		}
+
 	};
+	private void send() {
+//		class MyNet extends Thread{
+//			public void run() {
+//				//한번 데이터 전송후 연결이 끊어지므로 데이터를 전송할 때마다 서버에 연결 시도
+//				Socket s = null;
+//				ObjectOutputStream oos = null;
+//				try {
+//					s = new Socket("70.12.108.80", 5431);
+//					oos = new ObjectOutputStream(s.getOutputStream());
+//					oos.writeObject(model.searchAll());
+//				} catch (Exception e) {
+//					 e.printStackTrace();
+//				}finally {
+//					IOUtil.close(oos);
+//					IOUtil.close(s);
+//				}
+//				
+//			}
+//		}
+//		new MyNet().start();
+		new Thread() {
+			public void run() {
+				//한번 데이터 전송후 연결이 끊어지므로 데이터를 전송할 때마다 서버에 연결 시도
+				Socket s = null;
+				ObjectOutputStream oos = null;
+				try {
+					s = new Socket("70.12.108.80", 5431);
+					oos = new ObjectOutputStream(s.getOutputStream());
+					oos.writeObject(model.searchAll());
+				} catch (Exception e) {
+					 e.printStackTrace();
+				}finally {
+					IOUtil.close(oos);
+					IOUtil.close(s);
+				}
+				
+			}
+		}.start();
+	}
 	
 	private ItemListener checkHandler = new ItemListener() {
 		@Override
@@ -104,7 +150,7 @@ public class EmployeeUI {
 	}
 	public void update(){
 	}
-	public void insert() throws DuplicateException{
+	public void insert(){
 		String  empno= empnoTf.getText();
 		String  ename=nameTf.getText();
 		String salary = salaryTf.getText();
@@ -172,6 +218,7 @@ public class EmployeeUI {
 		deleteBt.addActionListener(buttonHandler);
 		updateBt.addActionListener(buttonHandler);
 		exitBt.addActionListener(buttonHandler);
+		
 	
 		empTable.addMouseListener(listHandler);
 		
@@ -205,7 +252,9 @@ public class EmployeeUI {
 		buttonPan.add(deleteBt);		
 		buttonPan.add(findBt);
 		buttonPan.add(exitBt);
-		
+		sendBt = new JButton("전송");
+		sendBt.addActionListener(buttonHandler);
+		buttonPan.add(sendBt);
 		
 		updatePan.add(checkPan);			
 		updatePan.add(empnoPan);		

@@ -1,5 +1,6 @@
 package com.ssafy.model.dao;
 
+
 import java.util.List;
 
 import com.ssafy.model.dto.CanNotFoundException;
@@ -18,19 +19,19 @@ public interface EmployeeDao {
 	 * 사원 정보를 등록하는 기능
 	 * @param emp
 	 */
-	void add(Employee emp) throws DuplicateException;
+	void add(Employee emp);
 
 	/**
 	 * 사원 정보를 수정하는 기능 
 	 * @param emp
 	 */
-	void update(Employee emp)throws CanNotFoundException;
+	void update(Employee emp) throws CanNotFoundException;
 
 	/**
 	 * 사원정보를 삭제하는 기능
 	 * @param empno
 	 */
-	void remove(String empno)throws CanNotFoundException;
+	void remove(String empno) throws CanNotFoundException;
 
 	void close();
 	

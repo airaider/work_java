@@ -2,9 +2,8 @@ package com.ssafy.model.dto;
 
 public class Engineer extends Employee {
 	private String skill;
-	public Engineer() {
-		
-	}
+
+	public Engineer() {	}
 	public Engineer(String empno, String name, int salary, String skill) {
 		super(empno, name, salary);
 		this.skill = skill;
@@ -16,6 +15,7 @@ public class Engineer extends Employee {
 		this.skill = skill;
 	}
 	public String toString() {
-		return super.toString()+" 기술:"+getSkill();
+		return super.toString()+" 보유기술:" + skill;
 	}
+	
 }

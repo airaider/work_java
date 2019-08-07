@@ -1,10 +1,10 @@
 package com.ssafy.model.dao;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -19,32 +19,32 @@ public class EmployeePolyManager implements EmployeeDao {
 	 * Super타입의 배열 하나만 선언하면 sub타입의 객체도 저장할 수 있다. 
 	 */
 	private List<Employee> emps;
-	private String filename = "employee.dat";
+	private String fileName ="employee.dat";
+	
 	public EmployeePolyManager() {
-		//emps = new LinkedList<Employee>();
+//		emps = new LinkedList<Employee>();
 		load();
 	}
 	public void load() {
-		FileInputStream fis = null;
-		ObjectInputStream ois = null;
+		FileInputStream   fis = null;
+		ObjectInputStream ois= null;
 		File file = null;
 		try {
-			file = new File(filename);
-//			지정한 경로에 파일이 있으면 true, 없으면 false
+			file = new File(fileName);
+			/** exists() : 지정한 경로에 파일이 있으면 true, 없으면 false*/
 			if(file.exists() && file.canRead()) {
 				fis = new FileInputStream(file);
 				ois = new ObjectInputStream(fis);
 				emps = (List) ois.readObject();
 			}else {
-				emps=new LinkedList<Employee>();
+				emps = new LinkedList<Employee>();
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
-			if(ois!=null)try {ois.close();}catch(Exception e) {}
-			if(fis!=null)try {fis.close();}catch(Exception e) {}
+		} finally {
+			if(ois != null )try {ois.close();}catch(Exception e) {}
+			if(fis != null )try {fis.close();}catch(Exception e) {}
 		}
-		
 	}
 	
 	
@@ -68,9 +68,7 @@ public class EmployeePolyManager implements EmployeeDao {
 			throw new CanNotFoundException(msg);
 		}
 	}
-	
-	public void add(Employee emp) throws DuplicateException{
-		System.out.println("Employee를 저장합니다.");
+	public void add(Employee emp) {
 		if(emp != null) {
 			String empno = emp.getEmpno();
 			int index = findIndex(empno);
@@ -80,6 +78,9 @@ public class EmployeePolyManager implements EmployeeDao {
 			}else {
 				emps.add(emp);
 			}
+		}else {
+			throw new DuplicateException("등록할 사원 정보를 입력해 주세요.");
+			
 		}
 	}
 	public void update(Employee emp) throws CanNotFoundException{
@@ -92,7 +93,7 @@ public class EmployeePolyManager implements EmployeeDao {
 				throw new CanNotFoundException("수정할 사원번호가 등록되지 않았습니다.");
 			}
 		}else{
-			throw new CanNotFoundException("수정할 사원번호가 등록되지 않았습니다.");
+			throw new CanNotFoundException("수정할 사원의 정보를 입력해 주세요");
 		}
 	}
 	public void remove(String empno) throws CanNotFoundException{
@@ -110,18 +111,17 @@ public class EmployeePolyManager implements EmployeeDao {
 	}
 	public void save() {
 		FileOutputStream fos = null;
-		ObjectOutputStream oos = null;
+		ObjectOutputStream oos=null;
 		try {
-			fos = new FileOutputStream(filename);
+			fos = new FileOutputStream(fileName);
 			oos = new ObjectOutputStream(fos);
 			oos.writeObject(emps);
 		} catch (Exception e) {
 			e.printStackTrace();
-		}finally {
+		} finally {
 			if(oos!=null)try {oos.close();}catch(Exception e) {}
 			if(fos!=null)try {fos.close();}catch(Exception e) {}
 		}
-				
 	}
 	public void close() {
 		save();

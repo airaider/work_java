@@ -2,9 +2,8 @@ package com.ssafy.model.dto;
 
 public class Manager extends Employee {
 	private String position;
-	public Manager() {
-		
-	}
+
+	public Manager() {	}
 	public Manager(String empno, String name, int salary, String position) {
 		super(empno, name, salary);
 		this.position = position;
@@ -15,7 +14,9 @@ public class Manager extends Employee {
 	public void setPosition(String position) {
 		this.position = position;
 	}
+	@Override
 	public String toString() {
-		return super.toString()+" 직책:"+getPosition();
+		return super.toString()+" 직위:" + position;
 	}
+	
 }

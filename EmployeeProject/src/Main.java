@@ -5,7 +5,7 @@ import com.ssafy.view.EmployeeUI;
 public class Main {
 	public static void main(String[] args) {
 		EmployeeDao dao = new EmployeePolyManager();
-		EmployeeUI mainView = new EmployeeUI();
+		EmployeeUI  mainView = new EmployeeUI();
 		mainView.setModel(dao);
 	}
 }
