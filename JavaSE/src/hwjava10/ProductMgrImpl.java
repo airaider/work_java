@@ -190,7 +190,7 @@ public class ProductMgrImpl implements IProductMgr {
                     ArrayList<Product> result = tvsearch();
                     result.addAll(refrigsearch());
                     
-                    oos.writeObject(result);
+                     
                 } catch (Exception e) {
                     e.printStackTrace();
                 } finally {

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>	
+<customerlist>
+	<customer id="ssafy">
+		<name>멀캠</name>
+		<age>2</age>
+		<address>서울시 강남구</address>
+	</customer>
+	<customer id="hkh">
+		<name>홍기환</name>
+		<age>26</age>
+		<address>인천시 연수구 2&lt;3  <![CDATA[2<3]]> </address>
+	</customer>
+
+</customerlist>

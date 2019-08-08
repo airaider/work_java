@@ -78,4 +78,14 @@ public class customer {
 //		컴파일시에 자동적으로 this.를 붙여준다
 	}
 
+
+	@Override
+	public String toString() {
+		StringBuilder builder = new StringBuilder();
+		builder.append("customer [name=").append(name).append(", age=").append(age).append(", address=").append(address)
+				.append("]");
+		return builder.toString();
+	}
+	
+
 }
