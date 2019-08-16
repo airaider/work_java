@@ -49,10 +49,11 @@ order by deptno desc, ename, sal desc;
 
 -- 10
 select ename, sal
-,(sal*comm/100) as com
+,(sal*(comm/100)) as com
 ,(sal+comm) as total
 from emp
-where comm is not null;
+where comm is not null
+order by total;
 
 -- 11
 select ename, sal
