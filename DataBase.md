@@ -23,3 +23,46 @@ like
 _ : 한 문자 대체
 
 %: 문자 개수 상관없이 대체
+
+
+
+having
+
+조건 : 집계 함수 결과
+
+group by랑 같이 사용 가능
+
+mySQL에서만 임의로 선언한 변수명 사용 가능
+
+
+
+foreign key
+
+없는값 참조 불가능
+
+
+
+SubQuery
+
+select [distinct] *| column [as Alias] or (SubQuery)
+
+from 테이블명[Alias] or (SubQuery) Alias
+
+where 조건 비교연산자 (SubQuery)
+
+** 불가능 group by 컬럼명
+
+having 조건 비교연산자 (SubQuery)
+
+order by 컬럼명 or (SubQuery)
+
+create table 테이블명 as SubQuery
+
+insert into 테이블명 values( (SubQuery), ...)
+
+delete from 테이블명 where 컬럼 비교조건 SubQuery
+
+update table명 set  (컬럼의 값에 사용 가능)
+
+where 컬럼 비교조건 SubQuery
+
