@@ -66,3 +66,25 @@ update table명 set  (컬럼의 값에 사용 가능)
 
 where 컬럼 비교조건 SubQuery
 
+
+
+1. Query 분석
+2. Query 수행할 프로시져 생성
+3. 프로시져 수행
+4. 프로시져 저장
+
+
+
+MVC(Model-View-Controller)
+
+View : jsp, html, javascript
+
+Controller : servlet
+
+Model : DAO(Data Access Object) - select, insert, delete, update
+
+​			  Service - transaction, service에 필요한 기능, network, 보안
+
+​			  Process - RUCD
+
+​			  DTO(Data Transfer Object) 
