@@ -150,6 +150,10 @@ name = 값을 구별할 이름, value = 서버에 전송될 값
 
 
 
+data- 속성
+
+- html5에 추가된 속성으로 태그에서 제공하는 기본속성이 아닌 개발자에 필요에 의해 선언해서 사용하는 속성
+
 
 
 # CSS
@@ -184,3 +188,74 @@ CSS 설정
 2. #id 명 {    }     ex) #box{color : pink;}
 
 3. .class 명{   }   ex) .box{color : orange;}
+
+
+
+**크기 단위**
+
+글자 크기
+
+​	em : 글자 크기, 배수 단위
+
+​		1em : 글자의 원래 크기
+
+​		2em : 글자의 원래 크기에 2배
+
+​	px : 글자, 이미지나 요소들의 크기를 지정, 화소수 단위
+
+​	% : 백분율 단위
+
+
+
+display
+
+- 요소의 특성을 정의해서 화면에 표시
+
+- none : 화면에 안보임, 요소의 자리를 차지하지 않는다
+
+- inline : element를 inline  특성으로 화면에 표시
+
+- block : element를 block 특성으로 화면에 표시
+
+- inline-block : element를 inline 처럼 한행에 여러 태그가 배치하고 block 처럼 너비 높이를 지정할 수 있다
+
+- table : element를 table처럼 표시
+
+- table-cell : element를 table의 cell로 표시(기본 1행에 표시되는 칼럼) => td
+
+- table-row : element를 table의 row로 표시 => tr
+
+
+
+visibility
+
+- element에 대한 가시성을 지정
+- hidden : element를 화면에 보이지 않게 한다, element의 원래 자리는 그대로 있음
+- visible : element를 화면에 보이게 한다, 기본 설정
+
+
+
+position
+
+- 요소의 위치를 지정
+
+- 종류
+
+  - fixed
+
+    body의 원점 (0,0) 을 기준으로 left, right, top, bottom의 위치를 고정
+    
+    ​			body의 원점을 기준으로 절대 위치에 좌표를 설정
+    
+  - static 
+  
+    position을 지정하지 않으면 기본적으로 static이 적용이 됨.
+    
+    x, y 좌표를 직접 지정해도 적용이 되지 않고 html engine이 display속성에 따라서 알아서 배치
+  
+  - absolute
+	  부모의 시작위를 원점으로 해서 절대 위치에 좌표를 설정
+
+  - relative
+  
+    static에 의해 표시될 위치를 기준으로 좌표를 설정

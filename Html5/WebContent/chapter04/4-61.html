@@ -19,14 +19,15 @@
             z-index: 1;
         }
         .box{
-        	position: fixed; /*div에 overflow: hidden을 설정해도 fixed면 무시됨*/
         	width: 100px;
         	height: 100px;
+        	position: absolute;
         }
 		body>div{ width: 400px;
 				  height: 100px;
 				  border: 1px solid black;
-				  overflow: hidden;	
+				  overflow: scroll;
+				  position: relative;	
 				}        
        
     </style>

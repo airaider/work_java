@@ -3,7 +3,14 @@
 <head>
     <title>CSS3 Selector Basic</title>
     <style>
-
+		a{text-decoration:none; /*a태그의 밑줄을 없애준다*/
+		color : black;
+		}
+		a:visited{color: red;}
+		
+		a:link::after{content:' - 'attr(href)}
+		a:hover{color : orange;}
+		
     </style>
 </head>
 <body>
