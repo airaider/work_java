@@ -1,9 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <typeInfoHistroy>
 <typeInfo handle="=JavaSE/C:\/Program Files\/Zulu\/zulu-8\/jre\/lib\/rt.jar&lt;java.lang(Runnable.class[Runnable" modifiers="1537" timestamp="1539738488000"/>
-<typeInfo handle="=MemberProject/C:\/Program Files\/Zulu\/zulu-8\/jre\/lib\/rt.jar&lt;java.io(Serializable.class[Serializable" modifiers="1537" timestamp="1539738488000"/>
-<typeInfo handle="=MemberProject/C:\/Program Files\/Zulu\/zulu-8\/jre\/lib\/rt.jar&lt;java.lang.reflect(Member.class[Member" modifiers="1537" timestamp="1539738488000"/>
-<typeInfo handle="=MemberProject/src&lt;com.ssafy.model.dao{MemberDAO.java[MemberDAO" modifiers="513" timestamp="1566458551172"/>
-<typeInfo handle="=MemberProject/src&lt;com.ssafy.model.service{MemberService.java[MemberService" modifiers="513" timestamp="1566458272382"/>
 <typeInfo handle="=HW&amp;WS/src&lt;wsAdjava03{BookDAO.java[BookDAO" modifiers="513" timestamp="1566459903468"/>
 </typeInfoHistroy>

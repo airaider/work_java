@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>CSS3 Property Basic</title>
+    <style>
+       .box:nth-child(1) {
+				background: red;
+				left: 10px;
+				top : 10px;
+				z-index: 100;
+			}		
+       .box:nth-child(2) {
+				background: green;
+				left: 50px;
+				top : 50px;
+				opacity: 0.5;
+				z-index: 10;
+			}		
+       .box:nth-child(3) {
+				background: blue;
+				left: 90px;
+				top : 90px;
+				z-index: 1;
+			}
+	   .d1 {	width: 200px;
+	   			height: 200px;
+	   			border: 1px solid black;
+	   			position: static;
+	   }		
+	   .d2 {	width: 200px;
+	   			height: 200px;
+	   			border: 1px solid black;
+	   			
+	   			left: 0px;
+	   			top:  0px;
+	   	}
+	   	.box { 	width: 100px;
+       			height: 100px;
+       			
+       		 }
+    </style>
+</head>
+<body>
+<div class='d1'></div>
+<div class='d2'>
+   <div  class='d3'>
+		<div class="box"></div>
+	    <div class="box"></div>
+	    <div class="box"></div>
+   </div>
+</div>
+</body>
+</html>
+
+
