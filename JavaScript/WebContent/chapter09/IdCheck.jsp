@@ -8,6 +8,7 @@
 <script type="text/javascript" src='../js/basic.js'></script>
 <script type="text/javascript">
 window.onload=function(){
+	//현재 창을 띄운 창(opener)에서 id를 찾아 오기
 	var openerId = opener.document.getElementById('id');
 	var id = document.getElementById('id');
 	id.value = openerId.value;

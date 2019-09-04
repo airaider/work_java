@@ -5,7 +5,52 @@
 <title>Insert title here</title>
 <script type="text/javascript">
 	/*함수 안에 함수를 선언할 수 있다. */
-
+	
+	function outer(type){
+		if(type==1){
+			function inner1(){
+				console.log('inner1함수 호출됨...')
+			}
+			inner1()
+		}else{
+			function inner2(){
+				console.log('inner2함수 호출됨...')
+			}
+			inner2()
+		}
+	}
+	outer(1)
+	
+	/* 함수를 인자로, 리턴으로 전달할 수 있다. */
+	//인자로 함수를 전달 받기
+	function outer2(f){
+		console.log(typeof(f))
+		if(typeof(f)=='function'){
+			f()
+		}else{
+			console.log(f)
+		}
+	}
+	outer2(10)
+	outer2(function(){
+		console.log('익명함수를 인자로 전달')
+	})
+	
+	//함수를 리턴값으로 전달 할 수 있다
+	function outer3(type){
+		if(type==1){
+			return function(){console.log('익명함수를 리턴으로 전달')}
+		}else{
+			return 10;
+		}
+	}
+	
+	var f3 = outer3(1)
+	if(typeof(f3)=='function'){
+		f3()
+	}
+	outer3(1)();
+	
 </script>
 </head>
 <body>

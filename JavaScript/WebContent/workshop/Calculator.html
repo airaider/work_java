@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
+	#calc { 
+		border: 1px solid  gray;
+		width: 350px;
+		text-align: center;	
+	}
+	#formula{
+		text-align: right;
+		width: 80%;
+		margin-top: 10px;
+		margin-bottom: 10px;
+	}  
+	#resultDiv{
+		text-align: left;
+		margin-left: 40px;
+	}
+	button{
+		width:70px;
+		height:70px;
+	}
+</style>
+<script type="text/javascript">
+	var idx=1
+	function add(num){
+		var formula = document.getElementById('formula')
+		if(num=="/" || num=="*" || num=="+" || num=="-"){
+			var check = formula.value.charAt(formula.value.length-1)
+			if(formula.value.charAt(0)!='' && !isNaN(check)){
+				formula.value+=num
+			}
+			else if(isNaN(check)){
+				formula.value=formula.value.substr(0, formula.value.length-1)
+				formula.value+=num
+			}
+		}
+		else if(num=="="){
+			var result = eval(formula.value)
+			var content = document.getElementById('result');
+			content.innerHTML+='<p>' +idx+". "+formula.value+"="+result+'<p>'
+			idx++ 
+			formula.value=result
+			
+		}
+		else if(num=="CE"){
+			formula.value=''
+			formula.placeholder='0.0'
+		}
+		else if(num=="0"){
+			if(formula.value!=''){
+				formula.value+=num
+			}
+		}
+		else {
+			formula.value+=num
+		}
+	}
+	
+	
+</script>
+</head>
+<body>
+	 <div id='calc'>
+	 	<input 	type='text' id='formula' value='' 
+	 			placeholder='0.0' readonly="readonly"/>
+	 	<div id='pad'>
+	 		<button onclick='add(7)'>7</button>
+	 		<button onclick='add(8)'>8</button>
+	 		<button onclick='add(9)'>9</button>
+	 		<button onclick='add("+")'>+</button>
+	 		<button onclick='add(4)'>4</button>
+	 		<button onclick='add(5)'>5</button>
+	 		<button onclick='add(6)'>6</button>
+	 		<button onclick='add("-")'>-</button>
+	 		<button onclick='add(1)'>1</button>
+	 		<button onclick='add(2)'>2</button>
+	 		<button onclick='add(3)'>3</button>
+	 		<button onclick='add("*")'>*</button>
+	 		<button onclick='add(0)'>0</button>
+	 		<button onclick='add("CE")'>CE</button>
+	 		<button onclick='add("=")'>=</button>
+	 		<button onclick='add("/")'>/</button>
+	 	</div>	
+	 	<div id='resultDiv'>
+	 		<h2>결과 이력</h2>
+	 		<p id='result'></p>
+	 	</div>	
+	 </div>
+</body>
+</html>
+
+
+
+
+
+

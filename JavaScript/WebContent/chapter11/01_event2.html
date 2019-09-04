@@ -4,7 +4,19 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
-
+	window.onload = function(){
+		var click = document.getElementById('click')
+		click.onclick = function(){
+			var content = document.getElementById('content')
+			content.innerHTML+='<h2>hello<\h2>'
+		}
+		var cancel = document.getElementById('cancel')
+		cancel.onclick = eventHandler
+	}
+	function eventHandler(){
+		var content = document.getElementById('content')
+		content.innerHTML=''
+	}
 </script></head><body>
 <button id='click'>click</button>
 <button id='cancel'>cancel</button>

@@ -8,9 +8,26 @@
  *  javascript에서 함수의 인자개수가 꼭 일치 하지 않아도 
  *  함수가 호출됨.
  */
-
-
-
+ function f(a,b,c,d){
+	console.log('a:',a);
+	console.log('b:',b);
+	console.log('c:',c);
+	console.log('d:',d);
+	console.log('len:', arguments.length)
+	if(arguments.length>0){
+	console.log('인자 정보:')
+		for (let arg of arguments) {
+			console.log(arg)
+		}
+	}
+	console.log('==================');
+}
+f()
+f(1)
+f(1,2)
+f(1,2,3)
+f(1,2,3,4)
+f(1,2,3,4,5)
 
 </script>
 </head>

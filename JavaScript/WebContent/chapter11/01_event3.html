@@ -4,7 +4,21 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
-
+	window.onload = function(){
+		var click = document.getElementById('click')
+		click.addEventListener('click',function(e){
+			console.log(this) //event 처리하는 함수에서 this는 event가 발생한 대상
+			var content = document.getElementById('content')
+			content.innerHTML+='<h2>hello<\h2>'
+		})
+		var cancel = document.getElementById('cancel')
+		cancel.addEventListener('click', eventHandler);
+		
+	}
+	function eventHandler(){
+		var content = document.getElementById('content')
+		content.innerHTML=''
+	}
 </script></head><body>
 <button id='click'>click</button>
 <button id='cancel'>cancel</button>

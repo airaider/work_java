@@ -5,7 +5,11 @@
 <title>Insert title here</title>
 <script type="text/javascript" src='../js/basic.js'></script>
 <script type="text/javascript">
-
+	function openWindow(){
+		console.log(event)
+		var newWind = window.open('../chapter11/addFileForm.html','','width=300,height=300,location="no"')
+		newWind.moveTo(window.screenX+event.clientX, screenY+event.clientY)
+	}
 </script>
 </head>
 <body>

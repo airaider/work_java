@@ -4,7 +4,16 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
-
+	var date = new Date();	//시스템의 날짜 데이터를 위한 객체
+	var hour = date.getHours();
+	console.log('현재시간', hour);
+	if (hour < 13) {
+		console.log('오전 시간입니다');
+	} else if(hour==13){
+		console.log('점심 시간입니다');
+	}else {
+		console.log('오후 시간입니다');
+	}
 </script>
 </head>
 <body>

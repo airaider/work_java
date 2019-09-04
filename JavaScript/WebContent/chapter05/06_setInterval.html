@@ -6,9 +6,19 @@
 <script type="text/javascript">
 	/*
 	  setInterval('함수명', ms) 
-	  - 지정 초마다 함수를 호출 
+	  - 지정 시간마다 함수를 호출 
 	*/
-
+	var x = 0;
+	function moveImg(){
+		var poster = document.getElementById('poster')
+		x+=5
+		poster.style.left = x+'px'
+		console.log('x:',x)
+	}
+	var intervalId = setInterval(moveImg, 500)
+	function stopImg(){
+		clearInterval(intervalId)
+	}
 </script>
 <style type="text/css">
 	img { 

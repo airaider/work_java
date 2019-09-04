@@ -5,6 +5,28 @@
 <title>Insert title here</title>
 <script type="text/javascript">
   var g1 ='hello';
+  g2='world'
+  let g3 = 'javascript'
+  function f1(){
+	  var local='local variable'
+	  g4 = 'global'
+	  console.log('g1:',g1)
+	  console.log('g2:',g2)
+	  console.log('g3:',g3)
+	  console.log('g4:',g4)
+	  console.log('local:', local)
+  }
+  f1()
+  function f2(){
+	  g4 = 'global'
+	  console.log('g1:',g1)
+	  console.log('g2:',g2)
+	  console.log('g3:',g3)
+	  console.log('g4:',g4)
+//	  console.log('local:', local) //f1() 함수에서 선언한 지역변수이므로 접근 불가
+  }
+  f2()
+  
 </script>
 </head>
 <body>

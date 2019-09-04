@@ -5,7 +5,16 @@
 <title>Insert title here</title>
 
 <script type="text/javascript">
-
+	// NaN : Not a Number	isNan() : 숫자인지 아닌지 검사
+	function formCheck(){ 
+		var quantity=document.getElementById('quantity')
+		if(isNaN(quantity.value)){
+			alert('정수를 입력하세요')
+			quantity.value=''
+			quantity.focus()
+			return false
+		}
+	}
 </script>
 </head>
 <body>
@@ -15,8 +24,3 @@
 	</form>
 </body>
 </html>
-
-
-
-
-

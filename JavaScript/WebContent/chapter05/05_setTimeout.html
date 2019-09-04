@@ -7,8 +7,14 @@
 	#submenu{ 		display: none; 	}
 </style>
 <script type="text/javascript">
+	//setTimeout(함수, ms) 지정된 시간 후에 한번 함수를 호출
     //3초후에 eventFun()함수가 호출되도록 설정
-
+	function eventFun(){
+		var submenu = document.getElementById('submenu')
+		submenu.style.display = 'block'
+	}
+	//setTimeout('eventFun()', 3000)
+	setTimeout(eventFun, 1000) //함수를 인자로 젆달해서 콜백함수로 사용되도록 설정
 </script>
 </head>
 <body>

@@ -11,9 +11,13 @@
 	console.log('html 내부에서 script 작성...');
 </script>
 </head>
-<body>
-	<a href="">script 수행</a>
+<!-- head에서 작성한 함수를 body에서 호출 -->
+<body onload='alert("body tag에서 수행")'>
+	<script type="text/javascript">
+		console.log('body 내부에서 script 작성')
+	</script>
+	<a href="javascript:alert('a tag에서 수행함')">script 수행</a>
+	<a href="#" onclick="alert('a tag에서 수행')" >script 수행</a>
 </body>
 </html>
-
 

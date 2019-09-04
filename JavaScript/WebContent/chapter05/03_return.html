@@ -4,7 +4,27 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <script type="text/javascript">
-
+	function f(a){
+		return a+' world'
+	}
+	console.log(f('javascript'))
+	
+	function checkForm(){
+		var id = document.getElementById('id')
+		var pw = document.getElementById('password')
+		
+		if(id.value==''){
+			alert('아이디를 입력해주세요')
+			id.focus()
+			return false	//form양식의 action에 설정한 서버로 데이터 전송을 안함
+		}else if(!pw.value){
+			alert('비밀번호를 입력해주세요')
+			pw.focus()
+			return false	//form양식의 action에 설정한 서버로 데이터 전송을 안함
+			
+		}
+	}
+	
 </script></head><body>
 <form action='a.jsp'  >
 	아 이 디 : <input type='text' name="id"  id='id'><br/>
