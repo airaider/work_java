@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type='text/javascript' src='../js/jquery-3.3.1.js'></script>
+<script type="text/javascript">
+$(function(){
+	
+});
+function processResult(data, status, xhr){
+	var errorMsg = $('error',data).text(); //<error>의 body 정보 추출
+	if(errorMsg !=''){ //error가 발생한경우 
+		alert(errorMsg);
+	}else{
+		$('data',data).each(function(index, item){
+			var html="<table><tr><td>게시글 번호</td><td>";
+			html+= $('no',item).text();
+			html+="</td></tr><tr><td>제 목</td><td>";
+			html+= $('title',item).text();
+			html+="</td></tr><tr><td>작성자</td><td>";
+			html+= $('id',item).text();
+			html+="</td></tr><tr><td colspan='2'>";
+			html+= $('content',item).text();
+			html+="</td></tr></table>";
+			$('#content').append(html);
+		});
+	}
+}
+</script>
+</head>
+<body>
+<button id="calc">게시글 보기</button>
+<div id="content"></div>
+<hr/>
+</body>
+
+
+
+
+
+</html>

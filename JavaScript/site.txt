@@ -1,0 +1,33 @@
+참고 서적
+모던 웹을 위한 HTML5 프로그래밍  [한빛 미디어]
+HTML5 CSS3 jQuery JavaScript 실무 활용 14가지 [위키 북스]
+
+site
+
+JDK
+http://www.oracle.com/technetwork/java/javase/downloads/index.html
+
+Eclipse IDE for Java EE Developers
+http://www.eclipse.org/downloads/
+
+tomcat
+http://tomcat.apache.org/download-70.cgi
+
+html5, CSS3 지원 여부 확인
+http://caniuse.com
+
+
+jQuery
+http://jquery.com
+http://api.jquery.com/category/selectors/
+https://www.w3schools.com/
+
+
+jQuery UI
+
+http://jqueryui.com     
+http://www.jqwidgets.com/    =>   http://www.jqwidgets.com/license   비영리 무료   영리 사이트당 $199
+
+
+navigator.geolocation이 안되는 경우 
+https://support.google.com/chrome/answer/6148059?hl=ko
