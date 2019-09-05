@@ -15,6 +15,7 @@ $(function(){
 			},
 			dataType : 'xml', 
 			success : function(data, status, xhr){
+				console.log(data)
 				$('#result').val($('result',data).text());
 			},
 			error : function(err){

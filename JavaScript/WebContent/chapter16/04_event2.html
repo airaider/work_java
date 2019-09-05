@@ -14,7 +14,16 @@ $(function(){
 						,...						
 		             })
 	*/
-
+	/*
+	$('h1').on({
+		mouseenter: function() {$(this).addClass('reverse')}
+		,mouseleave: function() {$(this).removeClass('reverse')}
+	
+	})
+	*/
+ 	$('h1').hover( function() {$(this).addClass('reverse')}
+ 				  ,function() {$(this).removeClass('reverse')}
+ 	)
  	
 });
 </script>

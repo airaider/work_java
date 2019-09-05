@@ -11,7 +11,12 @@
 <script type='text/javascript' src='../js/jquery-3.3.1.js'></script>
 <script>
  $(function(){
-	
+	$('#loginFormBt').click(function() {
+		$('#loginForm').fadeIn('slow')
+	})
+	$('#hideBt').click(function() {
+		$('#loginForm').fadeOut('slow')
+	})
  })
 </script>
 </head>

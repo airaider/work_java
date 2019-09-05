@@ -5,7 +5,11 @@
 <title>Insert title here</title>
 <script type='text/javascript' src='../js/jquery-3.3.1.js'></script>
 <script>
-
+	$(function() {
+		setInterval(function() {
+			$('img:first').appendTo('body')
+		}, 1000)
+	})
 </script>
 </head>
 <body>

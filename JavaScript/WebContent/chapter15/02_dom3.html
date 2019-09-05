@@ -5,7 +5,16 @@
 <title>Insert title here</title>
 <script type='text/javascript' src='../js/jquery-3.3.1.js'></script>
 <script>
-
+	$(function() {
+		$('#deleteB').click(function() {
+			//remove() : 해당 요소 하나를 삭제
+			$('#content>h1:first').remove()
+		})
+		$('#deleteAllB').click(function() {
+			//empty() : 해당 요소 내에 있는 모든 컨텐츠를 삭제
+			$('#content').empty()
+		})
+	})
 </script>
 </head>
 <body>

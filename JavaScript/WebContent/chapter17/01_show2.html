@@ -12,7 +12,16 @@
 <script>
  var isLogin = true;
  $(function(){
-	
+	$('#loginFormBt').click(function() {
+		$('#loginForm').toggle('slow')
+		if(isLogin){
+			$('#loginFormBt').text('닫 기')
+			isLogin=false
+		}else{
+			$('#loginFormBt').text('로그인')
+			isLogin=true
+		}
+	})	
 	
  })
 </script>

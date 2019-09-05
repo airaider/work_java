@@ -6,15 +6,18 @@
 <script type='text/javascript' src='../js/jquery-3.3.1.js'></script>
 <script type="text/javascript">
 $(function(){
-	
+	$('#addFile').click(addFileForm)
+	$('body').on('click','input[value="삭제"]', removeForm)
 });
 var count=0;   //file form index
 function addFileForm(){
-	
+	$("<div id='item'>")
+	.append("<input type='file' name='fileup'/>")
+	.append("<input type='button' value='삭제'/>" )
+	.appendTo('#content')
 }
-function removeForm(count){
-	var item = document.getElementById('item_'+count);
-	if(item !=null) item.parentNode.removeChild(item);
+function removeForm(){
+	$(this).parent().remove()
 }
 </script>
 </head>

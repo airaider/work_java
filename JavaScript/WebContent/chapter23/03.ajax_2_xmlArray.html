@@ -6,25 +6,40 @@
 <script type='text/javascript' src='../js/jquery-3.3.1.js'></script>
 <script type="text/javascript">
 $(function(){
-	
+	$('#calc').bind('click', function(evt){
+		$.ajax({
+		url : 'jsp/plus_ajax3_xml.jsp',
+			data : {
+				no : 1   //게시글 번호 
+			},
+			dataType : 'xml', 
+			success : processResult,
+			error : function(err){
+				console.log(err);
+			}
+		})
+	});
 });
-function processResult(data, status, xhr){
-	var errorMsg = $('error',data).text(); //<error>의 body 정보 추출
+function processResult(xmlData, status, xhr){
+	var errorMsg = $('error',xmlData).text(); //<error>의 body 정보 추출
 	if(errorMsg !=''){ //error가 발생한경우 
 		alert(errorMsg);
 	}else{
-		$('data',data).each(function(index, item){
-			var html="<table><tr><td>게시글 번호</td><td>";
+		var html="<table><tr><td>번호</td><td>제목</td><td>작성자</td></tr>";
+		//서버로 부터 받은 XML데이터에서 DATA태그를 찾기
+		$('data',xmlData).each(function(index, item){
+			html+="<tr><td>"
 			html+= $('no',item).text();
-			html+="</td></tr><tr><td>제 목</td><td>";
+			html+="</td><td>";
 			html+= $('title',item).text();
-			html+="</td></tr><tr><td>작성자</td><td>";
+			html+="</td><td>";
 			html+= $('id',item).text();
-			html+="</td></tr><tr><td colspan='2'>";
+			html+="</td><td>";
 			html+= $('content',item).text();
-			html+="</td></tr></table>";
-			$('#content').append(html);
+			html+="</td></tr>";
 		});
+		html+="</table>"
+		$('#content').append(html);
 	}
 }
 </script>

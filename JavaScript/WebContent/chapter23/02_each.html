@@ -6,11 +6,12 @@
 <script type='text/javascript' src='../js/jquery-3.3.1.js'></script>
 <script>
  $(function(){
-	//off(): 연결한 이벤트를 제거
 	$('h1').one('click',function() {
-		$(this).html('<h1>Click</h1>')
-		$(this).off()
-		console.log('click...')
+		//.each([대상,]function(index, item){})
+		$(this).each(function(index,item){
+			$(this).text('click'+index)
+			console.log(index)
+		})
 	})
  })
 </script>
