@@ -5,7 +5,20 @@
 <title>Insert title here</title>
 <script type='text/javascript' src='../js/jquery-3.3.1.js'></script>
 <script>
-
+	/* 
+	$.noConflict()
+	prototype도 $를 이용해서 사용하므로 jQuery와 같이 사용하면 충돌이 난다
+	그래서 jQuery에서는 $f를 사용 못하고 jQuery()만 사용하도록 설정
+	*/
+	$.noConflict()
+	/*
+	$(function () {
+		console.log("$못 쓰도록 설정해서 error남")
+	})
+	*/
+	jQuery(function() {
+		console.log('$.noConflict()는 jQuery만 사용')
+	})
 </script>
 </head>
 <body>

@@ -3,7 +3,13 @@
 <head>
     <script src="../js/jquery-3.3.1.js"></script>
     <script>
-		
+		$(function () {
+			$('td:nth-child(3n)').css('background','#f9f9f9')
+			$('td:nth-child(3n+1)').css('background','#595959')
+			$('td:nth-child(3n+2)').css('background','#a9a9a9')
+			$('tr:eq(0)').css('background','black').css('color', 'white')
+			
+		})
     </script>
 </head>
 <body>

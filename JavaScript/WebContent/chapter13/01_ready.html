@@ -5,7 +5,18 @@
 <title>Insert title here</title>
 <script type='text/javascript' src='../js/jquery-3.3.1.js'></script>
 <script>
-
+	/*
+	$(document).ready(function (){})
+	- document가 준비되면(DOM트리가 구성되면) 인자로 전달된 함수를 수행
+	- window.onload = function(){}과 동일한 효과
+	*/
+	$(document).ready(function () {
+		console.log('jQuery 예제')
+	})
+	
+	$(function(){
+		console.log("!!!")
+	})
 </script>
 </head>
 <body>

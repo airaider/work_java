@@ -3,7 +3,13 @@
 <head>
     <script src="../js/jquery-3.3.1.js"></script>
     <script>
-		
+		$(function(){
+			//:even :odd 0부터 시작
+			$('tr:even').css('background','pink')
+			$('tr:odd').css('background','purple')
+			$('tr:first').css('background','black').css('color','white')
+			$('tr:last').css('background','orange').css('color','white')
+		})
     </script>
 </head>
 <body>

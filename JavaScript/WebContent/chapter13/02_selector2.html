@@ -5,7 +5,22 @@
 <title>Insert title here</title>
 <script type='text/javascript' src='../js/jquery-3.3.1.js'></script>
 <script>
- 
+ 	$(function() {
+		$('span').css('color','purple')
+		$('#a').css('background', 'pink')
+		$('.bclass').css('border', '3px solid orange')
+		$('p[title]').css('border', '3px solid gray')
+		
+		//아이디가 c인 요소 내의 span 태그의 배경색을 blue로 설정
+		$('#c>span').css('border', '3px solid blue')
+		
+		/*
+		$('selector') : html page내에서 selector에 해당하는 tag들을 다 찾는다
+		$('selector', content) : content내에서 selector에 해당하는 tag들을 다 찾는다.
+		*/
+		var divC = $('#c')
+		$('span', divC)
+	})
 </script>
 </head>
 <body>
