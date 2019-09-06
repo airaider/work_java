@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<meta charset="utf-8" />
+  	<title>영화 예매</title>
+  	<script type='text/javascript' src='js/jquery-3.3.1.js'></script>
+  	<script>
+  	$(function(){
+		$('.innerFiledSet1').hide()
+		var mon=0
+		var pop=0
+		var coke=0
+		console.log(price)
+		$('input[name="time"]').change(function(){
+			if($(this).val()=="08:30"){
+				var money = "<strike>W9,000</strike>  <u>W5,000</u></div>";
+				mon=5000
+   				$("#priceLable").html(money)
+			}else{
+				var money = "W9,000</div>";
+				mon=9000
+   				$("#priceLable").html(money)
+			}
+		});
+		$("#person").change(function(){
+			var num = $(this).val()
+			$('#price').val(num*mon+pop+coke)
+		});
+		$('input[name="popcorn"]').change(function(){
+			var current = parseInt($('#price').val())
+			if($(this).prop("checked")==true){
+				$('#price').val(current+5000)
+				pop+=5000
+			}else{
+				$('#price').val(current-5000)
+				pop-=5000
+			}
+		});
+		$('input[name="cola"]').change(function(){
+				var current = parseInt($('#price').val())
+			if($(this).prop("checked")==true){
+				$('#price').val(current+2000)
+				coke+=2000
+			}else{
+				$('#price').val(current-2000)
+				coke-=2000
+			}
+		});
+		$('#option').click(function() {
+			console.log(this)
+			$('.innerFiledSet1').toggle()
+			if(tog){
+				tog=false
+			}else{
+				tog=true
+			}
+		})	
+	})
+  	</script>
+</head>
+
+<body>
+    <header>
+	    <hgroup>
+	      <h1>영화 예매</h1>    	
+	      <h2>쿵푸팬더</h2>    	
+	    </hgroup>
+    </header>
+
+	<article id="reservation">
+		<div style="width: 20%; float:left">
+		<section>
+			<img id="poster" alt="쿵푸팬더 poster"  src="./img/movie_image2.jpg">
+		</section>
+		</div>
+		<div style="width: 80%; float:right">
+		
+		<section>
+			<form>
+				<fieldset id="wrapperFieldset">
+					<legend id="wrapperLegend">예매정보 입력</legend>
+					<label>상영관</label>
+					<select>
+						<option>CGV</option>
+						<option>롯데시네마</option>
+						<option>메가박스</option>
+						<option>프리머스</option>
+						<option>다른극장</option>
+					</select>
+					<br/>
+					<label>날 &nbsp;짜</label><input type="date"/><br/>
+					<fieldset class="innerFiledSet">
+						<legend>시간</legend>
+						<input type="radio" name="time" value="08:30"/><label>08:30</label>
+						<input type="radio" name="time" value="11:00"/><label>11:00</label>
+						<input type="radio" name="time" value="14:20"/><label>14:20</label>
+						<input type="radio" name="time" value="17:25"/><label>17:25</label>
+						<input type="radio" name="time" value="20:10"/><label>20:10</label>
+						<input type="radio" name="time" value="23:05"/><label>23:05</label>
+					</fieldset>
+						<p/>
+					<label>요&nbsp;금</label><span id="priceLable">W9,000</span><p/>
+					<label>인&nbsp;원</label><input type="number" required="required"  min="1"  id='person'/><p/>
+					<label>금&nbsp;액</label><input type="number" readonly="readonly"  value="0" id='price'/>
+					<br/>
+					<br/>
+					<input type="checkbox" id="option" /><label>옵션</label>
+					<fieldset class="innerFiledSet1">
+						<input type="checkbox" name="popcorn"  value="5000"/><label>팝콘 W5,000</label>
+						<input type="checkbox" name="cola" value="2000"/><label>음료 W2,000</label>
+					</fieldset>
+				</fieldset>
+				<fieldset id="buttons">
+					<input type="reset" id="reset" value="취소">
+					<input type="submit" id="submit" value="예매">
+				</fieldset>			
+			</form>
+		</section>
+		
+		</div>
+	</article>
+</body>
+</html>
