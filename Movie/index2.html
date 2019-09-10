@@ -1,0 +1,236 @@
+<!DOCTYPE HTML>
+<!--
+	Projection by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+<head>
+
+<script type="text/javascript" src='./js/jquery-3.3.1.js'></script>
+<script type="text/javascript"></script>
+<script>
+	var list = new Array();
+	var imgList = new Array();
+	var nameList = new Array();
+	var makerList = new Array();
+	var materList = new Array();
+
+	function loadDoc() {
+		var req = new XMLHttpRequest();
+		req.onreadystatechange = function() {
+			if (this.readyState == 4 && this.status == 200) {
+				myFunction(this);
+			}
+		};
+		req.open("GET", "res/foodInfo.xml", true);
+		req.send();
+	}
+	function myFunction(xml) {
+
+		var xmlDoc = xml.responseXML;
+
+		var len = xmlDoc.getElementsByTagName("code").length;
+
+		var content = document.getElementById('content');
+		for (var i = 0; i < len; i++) {
+
+			var inner = '';
+			var img = xmlDoc.getElementsByTagName("image")[i].firstChild.data;
+			imgList.push(img)
+
+			inner += '<img style="margin-left: auto; margin-right: auto; display: block;id = "fimg" src='
+					+ img
+					+ ' width="200px" height="200px"; onclick=goinfo('
+					+ i + ')>'
+			inner += '<header><h3>'
+
+			var name = xmlDoc.getElementsByTagName("name")[i].firstChild.data;
+			nameList.push(name)
+			inner += name;
+			inner += '</h3><h5>';
+
+			var maker = xmlDoc.getElementsByTagName("maker")[i].firstChild.data;
+			makerList.push(maker)
+			inner += maker;
+			inner += "</h5></header><p>";
+
+			var material = xmlDoc.getElementsByTagName("material")[i].firstChild.data;
+			materList.push(material)
+			inner += material;
+			inner += '</p><ul class="actions">'
+			inner += '<li><a href="#" class="button special icon fa-plus">추가</a></li>'
+			inner += '<li><a href="#" class="button icon fa-inbox">찜</a></li></ul>';
+			//console.log(inner)
+			content.innerHTML += '<article>' + inner + '</article></div>'
+			tmp = '<article>' + inner + '</article></div>'
+			list.push(tmp)
+		}
+
+		//console.log(list)
+
+	}
+	function goinfo(code) {
+		console.log(code)
+		window.location = ("food.html?" + code)
+	}
+
+	$(function() {
+		$('#searchBtn').click(function() {
+			var content = document.getElementById('content');
+			content.innerHTML = ''
+
+			var cate = $('#demo-category').val()
+			var find = $('#query').val()
+
+			console.log(cate + " " + find)
+
+			for (var i = 0; i < list.length; i++) {
+				switch (cate) {
+				case '1': // 상품명
+					if (nameList[i].includes(find)) {
+						content.innerHTML += list[i]
+					}
+					break;
+				case '2': // 제조사
+					if (makerList[i].includes(find)) {
+						content.innerHTML += list[i]
+					}
+					break;
+				case '3': // 원재료
+					if (materList[i].includes(find)) {
+						content.innerHTML += list[i]
+					}
+					break;
+
+				}
+			}
+
+		})
+	})
+</script>
+
+<title>SafeFood | 상품 정보 목록</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+<body onload="loadDoc();">
+
+	<!-- Header -->
+	<header id="header">
+		<div class="inner">
+
+			<nav id="nav">
+				<span class="icon fa-home"></span> <a href="index2.html">Home</a> <span
+					class="icon fa-user"></span> <a href="login.html">Logout</a> <span
+					class="icon fa-heart"></span> <a href="detail.html">info</a>
+			</nav>
+		</div>
+		<div class="inner">
+
+			<!--  <a href="index.html" class="logo"><strong>SSAFY</strong>SafeFood</a>-->
+			<nav id="nav">
+				<div class="logo">
+					<a href="index.html"><img src="images/SSAFY.JPG"
+						style="position: absolute; top: -40px;" alt="ssafy"></a>
+				</div>
+				<a href="index.html">공지 사항</a> <a href="index.html">상품 정보</a> <a
+					href="index.html">베스트 섭취 정보</a> <a href="index.html">내 섭취 정보</a> <a
+					href="generic.html">예상 섭취 정보</a>
+
+			</nav>
+		</div>
+	</header>
+
+	<!-- Banner -->
+	<section id="banner">
+		<div class="inner">
+			<header>
+				<h1>안전 먹거리 프로젝트</h1>
+			</header>
+
+			<div>
+				<span class="icon fa-thumbs-up"></span>
+				<h3>건강한 삶을 위한 먹거리 프로젝트</h3>
+				<p>by SSAFY</p>
+			</div>
+
+			<form method="post" action="#">
+				<div class="row uniform">
+					<div class="3u 12u$(small)">
+						<div class="select-wrapper">
+							<select name="demo-category" id="demo-category">
+								<option value="">- 검색조건 -</option>
+								<option value="1">상품명</option>
+								<option value="2">제조사</option>
+								<option value="3">원재료</option>
+								<option value="4">알레르기 성분</option>
+							</select>
+						</div>
+					</div>
+					<div class="7u 12u$(small)">
+						<input type="text" name="query" id="query" value=""
+							placeholder="검색 단어" />
+					</div>
+					<div class="2u$ 12u$(small)">
+						<input type='button' value='검색' id='searchBtn' class="fit" />
+					</div>
+				</div>
+			</form>
+		</div>
+	</section>
+
+
+	<!-- Three -->
+	<section id="three" class="wrapper align-center">
+		<div class="inner">
+			<div class="flex flex-2" id='content'></div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer id="footer">
+		<div class="inner">
+			<div class="row" style="padding-left: 200px">
+
+				<div class="col-md-3">
+					<h4>Find Us</h4>
+					<div>
+						<span class="icon fa-map"></span> (SSAFY) 서울시 강남구 테헤란로 멀티스퀘어
+					</div>
+
+					<div>
+						<span class="icon fa-phone"></span> 1544-9001
+					</div>
+
+					<div>
+						<span class="icon fa-envelope"></span> admin@ssafy
+					</div>
+
+				</div>
+
+				<h4 style="padding-left: 100px;">About the company</h4>
+
+
+
+			</div>
+
+
+
+			<div class="copyright">
+				&copy; Untitled. Design: <a href="https://templated.co">TEMPLATED</a>.
+				Images: <a href="https://unsplash.com">Unsplash</a>.
+			</div>
+
+		</div>
+	</footer>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/skel.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+</html>
