@@ -12,6 +12,7 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="png"/>
 			<item value="nav"/>
 			<item value="submit"/>
 			<item value="searchBtn"/>
@@ -19,7 +20,6 @@
 			<item value="generic"/>
 			<item value="drawchar"/>
 			<item value="loadDoc"/>
-			<item value="건강"/>
 		</list>
 		<list key="replacehistory">
 		</list>
