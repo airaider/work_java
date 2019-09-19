@@ -8,17 +8,27 @@
 </head>
 <body>
 <%
-	
+Cookie[] cookies = request.getCookies();
+String id="";
+String checked="";
+if(cookies!=null){
+	for(Cookie cookie: cookies){
+		if(cookie.getName().equals("id")){
+			id = cookie.getValue();
+			checked="checked='checked'";
+		}
+	}
+}
 %>
 <form method="post"  action="cookielogin.do">
 	<table align="center" border="1">
 		<tr><td>아 이 디</td>
-		<td><input type="text" name="id" value=""></td></tr>
-		<tr><td>비밀번호</td>
+		<td><input type="text" name="id" value="<%=id%>"></td></tr>
+		<tr><td>비밀번호!</td>
 		<td><input type="password" name="password"></td></tr>
 		<tr>
 			<td colspan="2"  align="right">
-			  아이디 저장<input type="checkbox" name="idsave" value="t"   />
+			  아이디 저장<input type="checkbox" name="idsave" value="t" <%=checked%>  />
 			  <input type="submit" value="로그인">
 			</td>
 		</tr>

@@ -15,7 +15,7 @@ import com.ssafy.model.service.MemberServiceImp;
 /**
  * Servlet implementation class MemberSearchServlet
  */
-@WebServlet("/memberSearch.do")
+@WebServlet("/memberfind.do")
 public class MemberSearchServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	private MemberService service = new MemberServiceImp();

@@ -12,7 +12,6 @@ INDEX VERSION 1.131+C:\SSAFY\work_java\.metadata\.plugins\org.eclipse.jdt.core
 2286913325.index
 4270229378.index
 3822623248.index
-3291810630.index
 788392666.index
 1088383862.index
 2223580172.index

@@ -8,7 +8,7 @@
 		<caption> 오류 발생</caption>
 		<tr>
 			<td>오류메세지</td>
-			<td><%=exception.getMessage() %> </td>
+			<td><%=request.getAttribute("msg")%> </td>
 		</tr>
 	</table>
 </body>

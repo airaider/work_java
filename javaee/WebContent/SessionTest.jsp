@@ -9,8 +9,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-	
-	<h1>방문자 수 : </h1>
+	<% if(session.isNew()){count++;} %>
+	<h1>방문자 수 : <%=count%></h1>
 </body>
 </html>
 
