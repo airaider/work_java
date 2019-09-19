@@ -1,8 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="java.lang.InterruptedException"/>
-<fullyQualifiedTypeName name="java.net.ServerSocket"/>
-<fullyQualifiedTypeName name="java.io.DataOutputStream"/>
 <fullyQualifiedTypeName name="java.io.DataInputStream"/>
 <fullyQualifiedTypeName name="java.io.ObjectOutputStream"/>
 <fullyQualifiedTypeName name="chapter11.Employee"/>
@@ -35,7 +32,6 @@
 <fullyQualifiedTypeName name="com.ssafy.model.dto.Employee"/>
 <fullyQualifiedTypeName name="javax.management.RuntimeErrorException"/>
 <fullyQualifiedTypeName name="java.lang.RuntimeException"/>
-<fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="com.ssafy.model.dto.CanNotFindException"/>
 <fullyQualifiedTypeName name="com.ssafy.model.dto.DuplicateException"/>
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
@@ -44,7 +40,6 @@
 <fullyQualifiedTypeName name="com.ssafy.util.DBUtil"/>
 <fullyQualifiedTypeName name="java.sql.SQLException"/>
 <fullyQualifiedTypeName name="com.ssafy.model.dto.MemberException"/>
-<fullyQualifiedTypeName name="java.io.Serializable"/>
 <fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.lang.Exception"/>
 <fullyQualifiedTypeName name="java.io.BufferedReader"/>
@@ -60,4 +55,9 @@
 <fullyQualifiedTypeName name="com.ssafy.model.dto.Member"/>
 <fullyQualifiedTypeName name="com.ssafy.model.service.MemberServiceImp"/>
 <fullyQualifiedTypeName name="com.ssafy.product.Product"/>
+<fullyQualifiedTypeName name="javax.servlet.http.Cookie"/>
+<fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
 </qualifiedTypeNameHistroy>

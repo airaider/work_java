@@ -10,7 +10,8 @@
 	<h1>Hello JSP</h1>
 	<p> 현재 시간 : <%=new java.util.Date().toLocaleString()%></p>
 	<p><a href="memberRegitForm.do">회원 등록</a></p>
-	<p><a href="loginFrom.do">로그인</a></p>
+	<p><a href="loginForm.do">로그인</a></p>
+	<p><a href="goodsList.do">상품목록</a></p>
 </body>
 </html>
 

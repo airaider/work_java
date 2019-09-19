@@ -7,28 +7,37 @@
 <title>Insert title here</title>
 <style type="text/css">
  .errormsg{
- 	font-size:  14px;
+ 	font-size:  14px;s
  	color:red;
  }
 </style>
 </head>
 <body>
 <%
-	Cookie[] cookies = request.getCookies();
-	String id="";
-	String checked="";
-	if(cookies!=null){
-		for(Cookie cookie: cookies){
-			if(cookie.getName().equals("id")){
-				id = cookie.getValue();
-				checked="checked='checked'";
+	String loginId = (String)session.getAttribute("id");
+	if(loginId!=null){	%> 
+	<%=loginId %>님 환영합니다. <a href="logout.do">로그아웃</a>
+		 
+	<%}else{
+		String msg = (String)request.getAttribute("msg");
+		Cookie[] cookies = request.getCookies();
+		String id="";
+		String checked="";
+		if(cookies!=null){
+			for(Cookie cookie: cookies){
+				if(cookie.getName().equals("id")){
+					id = cookie.getValue();
+					checked="checked='checked'";
+				}
 			}
 		}
-	}
+	
 	%>	
-	<form method="post"  action="sessionlogin.do">
+	<form method="post"  action="login.do">
 	<table align="center" border="1">
-	    
+	    <%if(msg!=null){ %>
+	    <tr><td colspan="2" class='errormsg'><%=msg %></td></tr>
+	    <%}%>
 		<tr><td>아 이 디</td>
 		<td><input type="text" name="id" value="<%=id%>"></td></tr>
 		<tr><td>비밀번호</td>
@@ -41,6 +50,7 @@
 		</tr>
 	</table>
 </form>
+<%}%>
 </body>
 </html>
 

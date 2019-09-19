@@ -2,4 +2,6 @@
 <typeInfoHistroy>
 <typeInfo handle="=JavaSE/C:\/Program Files\/Zulu\/zulu-8\/jre\/lib\/rt.jar&lt;java.lang(Runnable.class[Runnable" modifiers="1537" timestamp="1539738488000"/>
 <typeInfo handle="=HW&amp;WS/src&lt;wsAdjava03{BookDAO.java[BookDAO" modifiers="513" timestamp="1566459903468"/>
+<typeInfo handle="=BackEnd_HW2/src&lt;com.ssafy.product.dao{ProductDAO.java[ProductDAO" modifiers="513" timestamp="1568880647182"/>
+<typeInfo handle="=BackEnd_HW2/src&lt;com.ssafy.product.service{ProductService.java[ProductService" modifiers="513" timestamp="1568881171584"/>
 </typeInfoHistroy>

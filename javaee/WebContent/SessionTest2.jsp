@@ -9,15 +9,11 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>count : </h1>
-	
-	<h2>JESSIONiD :</h2>
+	<h1>count : <%=++count %></h1>
+	<%if(count>5){
+		session.invalidate();
+	}
+	%>
+	<h2>JESSIONID : <%=session.getId() %></h2>
 </body>
 </html>
-
-
-
-
-
-
-
