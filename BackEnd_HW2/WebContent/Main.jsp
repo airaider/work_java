@@ -17,18 +17,15 @@
         <table>
             <tr>
                 <td><label for="id">ID</label></td>
-                <td><input id="id" type="text" /></td>
+                <td><input name="id" type="text" value="ssafy" /></td>
             </tr>
             <tr>
                 <td><label for="pw">PW</label></td>
-                <td><input id="pw" type="password" /></td>
+                <td><input name="pw" type="password" value="1111" /></td>
             </tr>
         </table>
         <input type="submit" value="LOGIN" id="login" />
     </fieldset>
-<a href="register.html">상품등록</a>
-<a href="#">상품목록</a>
-<a href="#">마지막 등록한 상품</a>
 </form>
 </body>
 

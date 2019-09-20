@@ -4,9 +4,11 @@ import java.io.IOException;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.ssafy.model.service.MemberService;
 import com.ssafy.model.service.MemberServiceImp;
@@ -23,7 +25,7 @@ public class MainServlet extends HttpServlet {
 		doPost(request, response);
 	}
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String url = "index.jsp";
+		String url = "Main.jsp";
 		String action = request.getServletPath();
 		System.out.println(action);
 		request.setCharacterEncoding("UTF-8");
@@ -36,7 +38,19 @@ public class MainServlet extends HttpServlet {
 				}
 				else if(action.endsWith("memberRegit.do")) {
 				
-				}		
+				}	
+				else if(action.endsWith("login.do")) {
+					url=login(request, response);
+				}
+				else if(action.endsWith("loginForm.do")) {
+					url="Login.jsp";
+				}
+				else if(action.endsWith("logout.do")) {
+					url=logout(request, response);
+				}
+				else if(action.endsWith("lastproduct.do")) {
+					url=findlast(request, response);
+				}
 				
 			}
 			
@@ -51,6 +65,47 @@ public class MainServlet extends HttpServlet {
 			request.getRequestDispatcher(url).forward(request, response);
 		}
 	}
+	private String findlast(HttpServletRequest request, HttpServletResponse response) {
+		Cookie[] cookies = request.getCookies();
+		if(cookies!=null){
+			for(Cookie cookie: cookies){
+				if(cookie.getName().equals("product")) {
+					HttpSession session = request.getSession();
+					session.setAttribute("product",service.search(cookie.getValue()));
+				}
+			}
+		}
+		return "redirect:lastproduct.jsp";
+	}
+	private String logout(HttpServletRequest request, HttpServletResponse response) {
+		HttpSession session = request.getSession();
+		session.removeAttribute("id");
+		
+		return "redirect:Main.jsp";
+	}
+	private String login(HttpServletRequest request, HttpServletResponse response) {
+		String id = request.getParameter("id");
+		String password = request.getParameter("pw");
+		String idSave = request.getParameter("idsave");
+		Cookie cookie = new Cookie("id", id);
+		if(idSave!=null) {	//checked박스가 선택된 상황 => cookie를 통해 id 유지
+			cookie.setMaxAge(50000000);
+		}else {				//checked박스가 선택되지 않은 상황 => 기존에 발생한 쿠디가 있다면 삭제
+			cookie.setMaxAge(0);
+		}
+		response.addCookie(cookie);
+		try {
+			memberService.login(id, password);
+			HttpSession session = request.getSession();
+			//session에 인증 정보를 저장  ex) 아이디, 권한정보, 닉네임
+			session.setAttribute("id", id);
+			return "redirect:loginForm.do";
+		} catch (Exception e) {
+			request.setAttribute("msg", e.getMessage());
+			System.out.println(e);
+			return "Main.jsp";
+		}
+	}
 	private String productInsert(HttpServletRequest request, HttpServletResponse response){
 		//1. 요청 데이터 추출
 		String name = request.getParameter("name");
@@ -59,10 +114,12 @@ public class MainServlet extends HttpServlet {
 		String explain = request.getParameter("explain");
 		Product product = new Product(no, name, price, explain);
 		service.add(product);
+		Cookie cookie = new Cookie("product", no);
+		cookie.setMaxAge(5000);
+		response.addCookie(cookie);
 		System.out.println("success");
 		return "redirect:register.html";
 	}
-	
 }
 
 

@@ -34,7 +34,9 @@ public class MemberServiceImp implements MemberService {
 
 	public boolean login(String id, String pw) {
 		try {
+			System.out.println(id+","+pw);
 			Member member = dao.search(id);
+			System.out.println(member);
 			if(member == null) {
 				throw new MemberException("등록되지 않은 회원 아이디입니다.");
 			}else {

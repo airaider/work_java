@@ -25,7 +25,7 @@ public class ProductDAOImp implements ProductDAO {
 				return new Product(rs.getString("no")
 						        , rs.getString("name")
 						        , rs.getString("price")
-						        , rs.getString("explain"));
+						        , rs.getString("descrip"));
 			}
 		} finally {
 		  DBUtil.close(rs);
@@ -49,7 +49,7 @@ public class ProductDAOImp implements ProductDAO {
 				members.add(new Product(rs.getString("no")
 				        , rs.getString("name")
 				        , rs.getString("price")
-				        , rs.getString("explain")));
+				        , rs.getString("descrip")));
 			}
 			return members;
 		} finally {
@@ -63,14 +63,14 @@ public class ProductDAOImp implements ProductDAO {
 		PreparedStatement stmt = null;
 		try {
 			con = DBUtil.getConnection();
-			String sql = " insert into product "
+			String sql = " insert into product (no,name,price,descrip)"
 					   + " values(?,?,?,?) ";
 			stmt = con.prepareStatement(sql);
 			int idx = 1;
 			stmt.setString(idx++, member.getNo());		
 			stmt.setString(idx++, member.getName());		
 			stmt.setString(idx++, member.getPrice());		
-			stmt.setString(idx++, member.getExplain());		
+			stmt.setString(idx++, member.getDescrip());		
 			System.out.println(stmt);
 			stmt.executeUpdate();
 			System.out.println("??");
@@ -85,7 +85,7 @@ public class ProductDAOImp implements ProductDAO {
 		PreparedStatement stmt = null;
 		try {
 			con = DBUtil.getConnection();
-			String sql = " update product set no=?, name=?, price=?, explain=? "
+			String sql = " update product set no=?, name=?, price=?, descrip=? "
 						+" where no=? " ;
 			
 			stmt = con.prepareStatement(sql);
@@ -93,7 +93,7 @@ public class ProductDAOImp implements ProductDAO {
 			stmt.setString(idx++, member.getNo());		
 			stmt.setString(idx++, member.getName());		
 			stmt.setString(idx++, member.getPrice());		
-			stmt.setString(idx++, member.getExplain());		
+			stmt.setString(idx++, member.getDescrip());		
 			stmt.executeUpdate();
 		} finally {
 			DBUtil.close(stmt);

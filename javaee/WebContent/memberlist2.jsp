@@ -15,10 +15,9 @@
 		${msg}
 	</c:when>
 		<c:otherwise>
-			<form method="post" action='memberUpdate.do'>
 				<table align='center'>
 					<tr>
-						<td class="caption" colspan='2'>회원정보</td>
+						<td class="caption" colspan='2'>검색정보</td>
 					</tr>
 					<tr>
 						<td class='tbasic'>아이디</td>
@@ -51,12 +50,11 @@
 							id='address' value='${member.address}'>
 					</tr>
 					<tr>
-						<td colspan='2' align='center' class='tfoot tspacial'><input
-							type="submit" value='수정'> <input type="reset"
-							value='취소'></td>
+						<td colspan='2' align='center' class='tfoot tspacial'>
+						<p><a href="memberlist.do">회원리스트</a></p>
+						</td>
 					</tr>
 				</table>
-			</form>
 		</c:otherwise>
 	</c:choose>
 </body>

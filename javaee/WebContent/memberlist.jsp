@@ -7,10 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>아이디 : ${param.id}</h1>
-	<h1>취미 : ${paramValues.hobby[0]}</h1>
+	<form method="post" action="memSearch.do">
+	<input type="text" name="id">회원 아이디
+	<input type="submit" value="검색">
+	</form>
+	<p><a href="index.jsp">뒤로가기</a></p>
 </body>
 </html>
-
-
-

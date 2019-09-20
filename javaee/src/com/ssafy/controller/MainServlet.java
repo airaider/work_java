@@ -65,6 +65,15 @@ public class MainServlet extends HttpServlet {
 				else if(action.endsWith("OrderPreview.do")) {
 					url="cart1/OrderPreview.jsp";
 				}
+				else if(action.endsWith("memberUpdate.do")) {
+					url=update(request, response);
+				}
+				else if(action.endsWith("memberlist.do")) {
+					url="memberlist.jsp";
+				}
+				else if(action.endsWith("memSearch.do")) {
+					url=search(request, response);
+				}
 				
 			}
 			
@@ -78,6 +87,22 @@ public class MainServlet extends HttpServlet {
 		}else {
 			request.getRequestDispatcher(url).forward(request, response);
 		}
+	}
+	private String search(HttpServletRequest request, HttpServletResponse response) {
+		String id = request.getParameter("id");
+		request.setAttribute("member", memberService.search(id));
+		return "memberlist2.jsp";
+	}
+	private String update(HttpServletRequest request, HttpServletResponse response) {
+		String id = request.getParameter("id");
+		String pw = request.getParameter("pw");
+		String name = request.getParameter("name");
+		String email = request.getParameter("email");
+		String phone = request.getParameter("phone");
+		String address = request.getParameter("address");
+		Member member = new Member(id, pw, name, email, phone, address);
+		memberService.update(member);
+		return "redirect:memberSearch.do?id="+id;
 	}
 	private String insertCart(HttpServletRequest request, HttpServletResponse response) {
 		//1. 요청 정보 파악
@@ -131,7 +156,8 @@ public class MainServlet extends HttpServlet {
 			HttpSession session = request.getSession();
 			//session에 인증 정보를 저장  ex) 아이디, 권한정보, 닉네임
 			session.setAttribute("id", id);
-			return "redirect:loginForm.do";
+//			return "redirect:loginForm.do";
+			return "redirect:memberSearch.do?id="+id;
 		} catch (Exception e) {
 			request.setAttribute("msg", e.getMessage());
 			return "member/Login.jsp";

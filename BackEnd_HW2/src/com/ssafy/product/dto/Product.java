@@ -6,14 +6,14 @@ public class Product implements Serializable{
 	private String no;
 	private String name;
 	private String price;
-	private String explain;
+	private String descrip;
 	public Product() {}
-	public Product(String no, String name, String price, String explain) {
+	public Product(String no, String name, String price, String descrip) {
 		super();
 		this.no = no;
 		this.name = name;
 		this.price = price;
-		this.explain = explain;
+		this.descrip = descrip;
 	}
 	public String getNo() {
 		return no;
@@ -33,17 +33,17 @@ public class Product implements Serializable{
 	public void setPrice(String price) {
 		this.price = price;
 	}
-	public String getExplain() {
-		return explain;
+	public String getDescrip() {
+		return descrip;
 	}
-	public void setExplain(String explain) {
-		this.explain = explain;
+	public void setDescrip(String descrip) {
+		this.descrip = descrip;
 	}
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
 		builder.append("Product [no=").append(no).append(", name=").append(name).append(", price=").append(price)
-				.append(", explain=").append(explain).append("]");
+				.append(", descrip=").append(descrip).append("]");
 		return builder.toString();
 	}
 	
