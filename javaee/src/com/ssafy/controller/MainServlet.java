@@ -2,6 +2,7 @@ package com.ssafy.controller;
 
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -69,7 +70,7 @@ public class MainServlet extends HttpServlet {
 					url=update(request, response);
 				}
 				else if(action.endsWith("memberlist.do")) {
-					url="memberlist.jsp";
+					url=getlist(request, response);
 				}
 				else if(action.endsWith("memSearch.do")) {
 					url=search(request, response);
@@ -87,6 +88,11 @@ public class MainServlet extends HttpServlet {
 		}else {
 			request.getRequestDispatcher(url).forward(request, response);
 		}
+	}
+	private String getlist(HttpServletRequest request, HttpServletResponse response) {
+		request.setAttribute("list", memberService.searchAll());
+		System.out.println("saved member into list");
+		return "memberlist.jsp";
 	}
 	private String search(HttpServletRequest request, HttpServletResponse response) {
 		String id = request.getParameter("id");
