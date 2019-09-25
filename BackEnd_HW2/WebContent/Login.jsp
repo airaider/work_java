@@ -16,7 +16,7 @@
         <legend>기능을 선택해 주세요</legend>
 				<a href="register.html">상품등록</a>
 				<br>
-				<a href="#">상품목록</a>
+				<a href="memberlist.do">상품목록</a>
 				<br>
 				<a href="lastproduct.do">마지막 등록한 상품</a>
 				<br>

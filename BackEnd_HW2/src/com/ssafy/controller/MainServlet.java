@@ -10,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.google.gson.Gson;
 import com.ssafy.model.service.MemberService;
 import com.ssafy.model.service.MemberServiceImp;
 import com.ssafy.product.dto.Product;
@@ -51,6 +52,21 @@ public class MainServlet extends HttpServlet {
 				else if(action.endsWith("lastproduct.do")) {
 					url=findlast(request, response);
 				}
+				else if(action.endsWith("memberlist.do")) {
+					url=getlist(request, response);
+				}
+				else if(action.endsWith("memSearch.do")) {
+					url=search(request, response);
+				}
+				else if(action.endsWith("update.do")) {
+					url=update(request, response);
+				}
+				else if(action.endsWith("delete.do")) {
+					url=delete(request, response);
+				}
+				else if(action.endsWith("searchBoardAjax.do")) {
+					url =searchBoardAjax(request, response);
+				}
 				
 			}
 			
@@ -59,11 +75,59 @@ public class MainServlet extends HttpServlet {
 			request.setAttribute("msg", e.getMessage());
 			url = "ErrorHandler.jsp";
 		}
-		if(url.startsWith("redirect")) {
+		if(url.startsWith("{") ||url.startsWith("[") ) {
+			//url이 { 또는 [로 시작하면 JSON 데이타 이므로  contents타입 변경후 
+			response.setContentType("application/json;charset=utf-8");
+			//직접 출력 
+			response.getWriter().append(url);
+		}else if(url.startsWith("redirect")) {
 			response.sendRedirect(url.substring(url.indexOf(":")+1));
 		}else {
 			request.getRequestDispatcher(url).forward(request, response);
 		}
+	}
+	
+	
+	private String delete(HttpServletRequest request, HttpServletResponse response) {
+		Cookie[] cookies = request.getCookies();
+		if(cookies!=null){
+			for(Cookie cookie: cookies){
+				if(cookie.getName().equals("product1")) {
+					HttpSession session = request.getSession();
+					service.remove(cookie.getValue());
+				}
+			}
+		}
+		return "memberlist.do";
+	}
+	private String searchBoardAjax(HttpServletRequest request, HttpServletResponse response) {
+		String no = request.getParameter("no");
+		Product board = service.search(no);
+		Gson gson = new Gson();
+		System.out.println(gson.toJson(board));
+		return gson.toJson(board);
+	}
+	private String update(HttpServletRequest request, HttpServletResponse response) {
+		String id = request.getParameter("id");
+		String pw = request.getParameter("pw");
+		String name = request.getParameter("name");
+		String email = request.getParameter("email");
+		Product pro = new Product(id,pw,name,email);
+		service.update(pro);
+		return "memberlist.do";
+	}
+	private String search(HttpServletRequest request, HttpServletResponse response) {
+		String no = request.getParameter("no");
+		request.setAttribute("member", service.search(no));
+		Cookie cookie1 = new Cookie("product1", no);
+		cookie1.setMaxAge(5000);
+		response.addCookie(cookie1);
+		return "memberlist2.jsp";
+	}
+	private String getlist(HttpServletRequest request, HttpServletResponse response) {
+		request.setAttribute("list", service.searchAll());
+		System.out.println("saved member into list");
+		return "memberlist.jsp";
 	}
 	private String findlast(HttpServletRequest request, HttpServletResponse response) {
 		Cookie[] cookies = request.getCookies();

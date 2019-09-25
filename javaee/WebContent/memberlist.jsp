@@ -10,7 +10,7 @@
 </head>
 <body>
 	<form method="post" action="memSearch.do">
-	<input type="text" name="id">회원 아이디
+	<input type="text" name="no">제품 번호
 	<input type="submit" value="검색">
 	</form>
 	<h1>회원 리스트</h1>
@@ -21,11 +21,11 @@
     </tr>   
 	<c:forEach items="${requestScope.list}" var="g">
 	<tr>
-	<td>${pageScope.g.id}</td>
+	<td>${pageScope.g.no}</td>
 	<td>${g.name}</td>
-	<td>${g.email}</td>
+	<td>${g.price}</td>
 	</c:forEach>
 	</table>
-	<a href="index.jsp">뒤로가기</a>
+	<a href="Login.jsp">뒤로가기</a>
 </body>
 </html>

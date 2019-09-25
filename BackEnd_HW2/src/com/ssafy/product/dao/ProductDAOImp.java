@@ -85,15 +85,15 @@ public class ProductDAOImp implements ProductDAO {
 		PreparedStatement stmt = null;
 		try {
 			con = DBUtil.getConnection();
-			String sql = " update product set no=?, name=?, price=?, descrip=? "
+			String sql = " update product set name=?, price=?, descrip=? "
 						+" where no=? " ;
 			
 			stmt = con.prepareStatement(sql);
 			int idx = 1;
-			stmt.setString(idx++, member.getNo());		
 			stmt.setString(idx++, member.getName());		
 			stmt.setString(idx++, member.getPrice());		
 			stmt.setString(idx++, member.getDescrip());		
+			stmt.setString(idx++, member.getNo());		
 			stmt.executeUpdate();
 		} finally {
 			DBUtil.close(stmt);
@@ -105,7 +105,7 @@ public class ProductDAOImp implements ProductDAO {
 		PreparedStatement stmt = null;
 		try {
 			con = DBUtil.getConnection();
-			String sql = " delete from product where id=? " ;
+			String sql = " delete from product where no=? " ;
 			stmt = con.prepareStatement(sql);
 			stmt.setString(1, id);		
 			stmt.executeUpdate();
