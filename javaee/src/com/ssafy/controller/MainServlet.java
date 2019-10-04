@@ -12,10 +12,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-import com.ssafy.model.domain.Goods;
-import com.ssafy.model.dto.Member;
-import com.ssafy.model.service.MemberService;
-import com.ssafy.model.service.MemberServiceImp;
+import com.ssafy.member.domain.Goods;
+import com.ssafy.member.dto.Member;
+import com.ssafy.member.service.MemberService;
+import com.ssafy.member.service.MemberServiceImp;
 
 @WebServlet("*.do")
 public class MainServlet extends HttpServlet {

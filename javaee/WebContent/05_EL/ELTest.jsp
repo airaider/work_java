@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"
-    import="com.ssafy.model.domain.Goods" %>
+    import="com.ssafy.member.domain.Goods" %>
 <%
 	Goods goods = new Goods(1,"hadoop",15000,10,0);
 	request.setAttribute("goods", goods);

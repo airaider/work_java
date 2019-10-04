@@ -8,9 +8,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.ssafy.model.dto.Member;
-import com.ssafy.model.service.MemberService;
-import com.ssafy.model.service.MemberServiceImp;
+import com.ssafy.member.dto.Member;
+import com.ssafy.member.service.MemberService;
+import com.ssafy.member.service.MemberServiceImp;
 
 /**
  * Servlet implementation class MemberSearchServlet

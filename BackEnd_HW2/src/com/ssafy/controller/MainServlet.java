@@ -11,8 +11,8 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.google.gson.Gson;
-import com.ssafy.model.service.MemberService;
-import com.ssafy.model.service.MemberServiceImp;
+import com.ssafy.member.service.MemberService;
+import com.ssafy.member.service.MemberServiceImp;
 import com.ssafy.product.dto.Product;
 import com.ssafy.product.service.ProductService;
 import com.ssafy.product.service.ProductServiceImp;
