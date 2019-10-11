@@ -26,6 +26,12 @@ FROM
 GROUP BY deptno , job
 ORDER BY deptno;
 
+-- 업무별 급여 평균이 2000이상인 업무들을 조회
+select deptno, round(avg(sal)) as avgsal from emp
+group by deptno
+having avgsal>=2000;
+
+
 -- 제조사별, 분류별 상품의 평균 가격을 조회
 SELECT 
     maker, cno, ROUND(AVG(price)) acgPrice
