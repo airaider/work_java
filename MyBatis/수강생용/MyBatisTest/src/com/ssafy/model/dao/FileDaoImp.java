@@ -1,0 +1,17 @@
+package com.ssafy.model.dao;
+
+import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+
+import com.ssafy.model.dto.FileBean;
+
+public class FileDaoImp implements FileDao {
+	public void insertFile(SqlSession session, List<FileBean> files) {
+		
+	}
+	public void deleteFile(SqlSession session, String bno) {
+		
+	}
+
+}

@@ -149,7 +149,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="0911_servlet" path="/0911_servlet" reloadable="true" source="org.eclipse.jst.jee.server:0911_servlet"/><Context docBase="javaee" path="/javaee" reloadable="true" source="org.eclipse.jst.jee.server:javaee"/><Context docBase="BackEnd_HW" path="/BackEnd_HW" reloadable="true" source="org.eclipse.jst.jee.server:BackEnd_HW"/><Context docBase="BackEnd_HW2" path="/BackEnd_HW2" reloadable="true" source="org.eclipse.jst.jee.server:BackEnd_HW2"/><Context docBase="BoardProject" path="/BoardProject" reloadable="true" source="org.eclipse.jst.jee.server:BoardProject"/><Context docBase="BackBackBack" path="/BackBackBack" reloadable="true" source="org.eclipse.jst.jee.server:BackBackBack"/><Context docBase="practice" path="/practice" reloadable="true" source="org.eclipse.jst.jee.server:practice"/><Context docBase="AlgoSafeFood" path="/AlgoSafeFood" reloadable="true" source="org.eclipse.jst.jee.server:AlgoSafeFood"/></Host>
+      <Context docBase="0911_servlet" path="/0911_servlet" reloadable="true" source="org.eclipse.jst.jee.server:0911_servlet"/><Context docBase="BoardProject" path="/BoardProject" reloadable="true" source="org.eclipse.jst.jee.server:BoardProject"/><Context docBase="BoardProject_MyBatis" path="/BoardProject_MyBatis" reloadable="true" source="org.eclipse.jst.jee.server:BoardProject_MyBatis"/></Host>
     </Engine>
   </Service>
 </Server>
