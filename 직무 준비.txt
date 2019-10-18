@@ -1,0 +1,67 @@
+직무 질문
+
+JAVA
+1. 자바 리플렉션이란
+2. 프로세스와 쓰레드의 차이
+3. 싱글 스레드와 멀티 스레드의 차이
+4. public, default, protected, private 차이
+5. GC에 대해 설명하시오
+6. Interface와 Abstract의 차이
+7. final
+8. CallbyValue, CallbyReference 차이
+9. Heap, Stack, Static에 대해 설명하시오
+10. 객체지향 언어란? 객체란? 3대요소
+11. 다형성 - 재사용성, 유지보수, 수정을 용이하게, 인자와 메소드, 리턴을 일치시켜서 코드를 수정하지 않고 변화된 내용을 쓰겠당
+12. overload, override에 대해 설명하시오
+
+자료구조 / 알고리즘
+1. stack, queue, deque 차이
+2. arraylist, linkedlist 차이
+3. hash (time complexity, chaining, worst case, bucket)
+4. balanced tree와 일반 BST의 차이점
+
+알고리즘
+1. binary search 시간 복잡도
+2. Single Linked List에서 cycle을 검사하는 함수
+3. 피보나치 수열
+4. greedy와 DP의 차이
+5. sorting 종류, 시간복잡도
+
+OS
+1. 데드락과 해결법
+2. race condition이란?
+3. Mutex, Semaphore, Condition Variable이란?
+4. Condition Variable을 사용하는 다른 명칭?
+5. IPC란?
+6. 임계영역이란?
+7. CPU 스케줄링
+8. 프로세스 스케줄링, 종류, 예시
+9. 가상 메모리 정의와 수현 기법
+10. 페이지 교체 알고리즘
+
+DB
+1. index란?
+2. transaction이란?
+3. 무결성과 정합성이란?
+4. DB무결성 4가지
+5. 정규화란?
+6. DDL, DML, DCL, TCL
+7. view의 특징과 장단점
+8. JDBC, ODBC 차이
+
+소공
+1. 블랙박스 테스트와 화이트박스 테스트의 차이
+
+네트워크
+1. TCP, UDP 차이
+2. GET, POST 차이점
+3. session과 cookie에 대해 설명하시오
+4. MVC 모델이란
+5. Spring Framework에 대해 설명하시오
+
+기타
+1. map-reduce
+2. 분산처리란?
+3. 문자열(Day)가 주어지면 이를 반대로(yaD) 프린트하는 함수(언어 자유) 손코딩
+4. restful api 란?
+5. singleton이란?

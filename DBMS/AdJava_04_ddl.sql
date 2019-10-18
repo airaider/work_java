@@ -95,3 +95,41 @@ FROM
 */
  
 truncate cemp;
+select * from member;
+select * from product;
+drop table member;
+select * from member;
+
+select * from food_member;
+select * from food;
+drop table food;
+CREATE TABLE `food` (
+`code` int(11) NOT NULL,
+`name` varchar(30) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+`supportpereat` double DEFAULT NULL,
+`calory` double DEFAULT NULL,
+`carbo` double DEFAULT NULL,
+`protein` double DEFAULT NULL,
+`fat` double DEFAULT NULL,
+`sugar` double DEFAULT NULL,
+`natrium` double DEFAULT NULL,
+`chole` double DEFAULT NULL,
+`fattyacid` double DEFAULT NULL,
+`transfat` double DEFAULT NULL,
+`maker` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+`material` varchar(1000) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+`img` varchar(50) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+`allergy` varchar(30) CHARACTER SET utf8 COLLATE utf8_bin DEFAULT NULL,
+PRIMARY KEY (`code`)
+);
+select * from food;
+select * from food_member;
+
+CREATE TABLE `ssafydb`.`user_food` (
+`no` INT NOT NULL AUTO_INCREMENT,
+`id` VARCHAR(45) NOT NULL,
+`code` INT NOT NULL,
+`cnt` INT NOT NULL,
+PRIMARY KEY (`no`));
+
+insert into user_food('id', 'code', 'cnt') values('ssafy', 1, 3);

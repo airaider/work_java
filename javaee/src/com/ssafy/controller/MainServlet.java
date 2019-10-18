@@ -110,6 +110,29 @@ public class MainServlet extends HttpServlet {
 		memberService.update(member);
 		return "redirect:memberSearch.do?id="+id;
 	}
+	private String foodAdd(HttpServletRequest request, HttpServletResponse response) {
+		HttpSession session = request.getSession();
+		String cnt = request.getParameter("eat_cnt");
+		String code = request.getParameter("code");
+		String id = (String) session.getAttribute("id");
+		System.out.println("cnt:"+cnt+" code:"+code+" id:"+id);
+		eatinfoService.add(new EatInfo(id,code,cnt));
+		List<Food> list = (List<Food>) request.getSession().getAttribute("list");
+		List<EatInfo> info = eatinfoService.searchAll();
+		HashMap<Integer, Integer> eatlist = new HashMap<>();
+		for (EatInfo eatInfo : info) {
+			if(eatInfo.getId().equals(id)) {
+				if(eatlist.containsKey(eatInfo.getCode()){
+					eatlist.put(eatInfo.getCode(), eatlist.get(eatInfo.getCode())+eatInfo.getCnt());
+				}
+				else{
+					eatlist.put(eatInfo.getCode(), eatInfo.getCnt());
+				}
+			}
+		}
+		session.setAttribute("eatlist", eatlist);
+		return "foodadd.jsp";	
+	}
 	private String insertCart(HttpServletRequest request, HttpServletResponse response) {
 		//1. 요청 정보 파악
 		String proname = request.getParameter("proname");

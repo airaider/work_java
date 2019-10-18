@@ -1,0 +1,158 @@
+Java는 플랫폼을 지원해주는 VM을 제공한다 (JVM)
+어플리케이션의 각종 제어 및 메모리 관리
+
+Java의 등장 배경
+임베디드 시스템에 porting하는 것이 쉽지 않았다
+언어가 다 다르니 컴파일학 디버깅하기가 어려웠다
+Java의 JVM라는 임베디드 시스템 위에 porting을 하고 일괄적으로 처리하기에 용이
+메모리 관리{
+    PC register
+    Native Stacks(C,C#)
+    Java Stacks
+    Heap
+    Method Area(=Class Area)
+}
+
+JVM을 위한 Java의 명령 코드 : class(byte code)
+OS가 아닌 JVM만이 이해하는 기계어
+OS가 인식할 수 있는 언어로 JVM이 interpreting
+Java의 interpreting때문에 느린 속도를 개선하기 위해 git code에서 한번 interpreting이 완료된 코드를 저장
+처음 실행시에 속도가 느린 이유 -> 한번 수행한 코드를 저장하기 때문에 점차 빨라짐
+
+Java의 특징
+객체지향 : 변화가 쉬운 언어
+해당 OS에 JVM이 있어야만 구동 가능 (플랫폼 독립적)
+메모리 관리를 Garbage Collector에서 수행해줌
+포인터를 사용하지 않는다, 포인터가 장치를 망가뜨릴 위험이 존재하기 때문에
+Java는 동적이다{
+    c는 기본 정적이고 동적일때만 virtual
+    c,c++ 는 모든 코드를 main memory에 로딩 필요
+    java는 기본 동적이고 정적일때만 static 
+    java는 필요한 class만 main memory에 로딩
+    객체지향이고 변화에 용이하기 위해
+}
+class 로딩을 동적으로 
+메모리 할당을 동적으로 (new 객체 생성)
+method binding(linking)을 동적으로 한다. 호출할때 binding을 한다
+성능 < 유지보수(임베디드 시스템을 위해서)
+분산환경 지원
+멀티 스레드{
+    하드디스크에 설치된 application을 M.M.에 loading되어서 실행이 가능한 상태가 process
+    원래는 process의 data와 code를 fork하여 복제
+    JVM위에 있는 data,code를 실행할때 하나의 process위에 thread를 실행
+}
+
+
+Java 
+MyDate{
+    year : int
+    month : int
+    date : int
+}
+
+
+MyDate d = new MyDate();
+
+
+Stacks{
+    (thread당 1개) -> local 변수, this
+    1) main{
+        d [4byte]
+        4)d [0x11할당된 Eden의 hash값(참조할 수 있는 참조값)]
+    }
+}
+
+heap은 3개의 영역으로 나뉘어짐{
+    Eden{3)
+        year[0]
+        month[0]
+        date[0] 기본값으로 할당
+                접근 가능한 hash값을 할당
+                s1으로 옮겨진 후에는 지우고 새로운 s1의 hashcode를 할당
+    }
+    Survival1,S2{
+        moved to 3000
+        move from eden to s1 and return hash code 0x11 / 3000
+        객체가 다 차면 다시 s2로 이동 후 지움
+        s2가 다 차면 다시 old로 이동
+    }
+    Old{
+        적절한 시기에 parralel 검사를 하여 사용하지 않는 것을 mark한다
+        scan이 끝난 후에 안쓰는 class에 쓰는 class를 덮어서 옮겨 놓는다 (mark & sweep)
+    }
+}
+Method Area{
+    2) MyDate{
+    year : int
+    month : int
+    date : int
+    }loading(객체를 처음 생성할때 loading된다)
+}
+
+
+Ecplise 단축키
+실행                crtl + f11
+폰트 확대/축소       crtl + shift
+코드 generate       crtl + space{
+    sysout(콘솔 출력 코드)              
+    예약어(코드 generate)
+    변수명, 매서드명
+    클래스명(class import)
+}
+주석                crtl + /
+한줄삭제            crtl + d
+코드 정렬           crtl + shift + f
+코드 import         crtl + shift + o
+화면 키움           crtl + m
+창 이동             alt + -> / <-
+코드 한줄 복사      crtl + alt + 위 / 아래
+코드 이동           alt + 위 / 아래
+
+public static void main(String[] 요기까지는 무조건 고정
+java는 code verifying 과정을 통해서만 실행이 가능해진다
+컴파일을 두번 실행, 오류체크, code optimizing
+javadoc 패키지명 패키지명...
+
+code : 컴퓨터 명령어
+ASCII 코드{
+    영어 대,소문자 , 숫자, 특수기호 128개를 0번부터 127번까지 부여
+}
+ISO-8859-1{
+    ASCII를 확장(몇 가지 특수 기호 추가)하여 1byte로 코드화
+}
+유니코드{
+    전세계 언어를 코드화
+    utf-8   상용코드로 가장 많이 사용
+    utf-16  2byte로 전세계 언어를 코드화
+    utf-24  중국말
+}
+
+Primitave : 변수를 위해 할당된 메모리에 실제 값이 저장됨
+Reference : 변수를 위해 할당된 메모리에 참조값(hash code)이 저장됨
+Pass(call) by value : 메모리에 있는 실제 값을 전달하는 방식이 Java가 채용하는 방식
+
+
+
+if (조건(논리)){
+    true인 경우에 수행;
+}
+else if(){
+
+}
+else{
+    false인 경우에 수행;
+}
+
+switch(조건(값, 변수, 인자, 연산, 함수호출)){
+        1.6v : byte, short, char, int
+        1.7v : 1.6v + string
+    case 값:
+        break;
+    case 값:
+        break;
+    default:
+}
+
+
+Workshop
+WSJava01_기수_지역-반-성명

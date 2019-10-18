@@ -1,12 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="javax.swing.JTextArea"/>
-<fullyQualifiedTypeName name="javax.swing.JPanel"/>
-<fullyQualifiedTypeName name="java.awt.event.ActionListener"/>
-<fullyQualifiedTypeName name="javax.swing.event.ListSelectionListener"/>
-<fullyQualifiedTypeName name="com.ssafy.news.INewsDAO"/>
-<fullyQualifiedTypeName name="org.xml.sax.helpers.DefaultHandler"/>
-<fullyQualifiedTypeName name="javax.xml.parsers.SAXParserFactory"/>
 <fullyQualifiedTypeName name="javax.xml.parsers.SAXParser"/>
 <fullyQualifiedTypeName name="javax.xml.parsers.DocumentBuilderFactory"/>
 <fullyQualifiedTypeName name="javax.xml.parsers.DocumentBuilder"/>
@@ -27,7 +20,6 @@
 <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
 <fullyQualifiedTypeName name="com.ssafy.util.DBUtil"/>
 <fullyQualifiedTypeName name="java.sql.SQLException"/>
-<fullyQualifiedTypeName name="com.ssafy.model.dto.MemberException"/>
 <fullyQualifiedTypeName name="java.lang.Exception"/>
 <fullyQualifiedTypeName name="java.io.BufferedReader"/>
 <fullyQualifiedTypeName name="com.sun.imageio.plugins.common.InputStreamAdapter"/>
@@ -49,7 +41,6 @@
 <fullyQualifiedTypeName name="javax.servlet.http.Cookie"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpServletRequest"/>
 <fullyQualifiedTypeName name="javax.servlet.http.HttpSession"/>
-<fullyQualifiedTypeName name="com.ssafy.model.dto.PageBean"/>
 <fullyQualifiedTypeName name="com.google.gson.Gson"/>
 <fullyQualifiedTypeName name="com.ssafy.member.dto.Member"/>
 <fullyQualifiedTypeName name="com.sun.xml.internal.ws.policy.privateutil.PolicyUtils.Collections"/>
@@ -57,7 +48,16 @@
 <fullyQualifiedTypeName name="java.util.Collections"/>
 <fullyQualifiedTypeName name="com.mysql.cj.Session"/>
 <fullyQualifiedTypeName name="com.ssafy.util.KMP"/>
-<fullyQualifiedTypeName name="java.util.List"/>
 <fullyQualifiedTypeName name="java.util.LinkedList"/>
 <fullyQualifiedTypeName name="java.lang.Comparable"/>
+<fullyQualifiedTypeName name="com.ssafy.model.dto.MemberException"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.session.RowBounds"/>
+<fullyQualifiedTypeName name="org.apache.ibatis.session.SqlSession"/>
+<fullyQualifiedTypeName name="com.ssafy.config.MyBatis"/>
+<fullyQualifiedTypeName name="com.ssafy.model.dto.BoardException"/>
+<fullyQualifiedTypeName name="com.ssafy.util.PageUtility"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.ssafy.model.dto.PageBean"/>
+<fullyQualifiedTypeName name="com.ssafy.model.dao.ProductDao"/>
+<fullyQualifiedTypeName name="com.ssafy.model.dao.ProductDaoImpl"/>
 </qualifiedTypeNameHistroy>
