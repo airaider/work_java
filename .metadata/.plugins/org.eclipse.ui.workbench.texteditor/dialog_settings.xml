@@ -12,6 +12,7 @@
 		<item value="true" key="wrap"/>
 		<item value="false" key="wholeword"/>
 		<list key="findhistory">
+			<item value="session"/>
 			<item value="member"/>
 			<item value="passwarod"/>
 			<item value="ㄴ"/>
@@ -19,7 +20,6 @@
 			<item value="test"/>
 			<item value="login.do"/>
 			<item value="boardContent"/>
-			<item value="src"/>
 		</list>
 		<list key="replacehistory">
 		</list>

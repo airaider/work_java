@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="javax.xml.parsers.SAXParser"/>
 <fullyQualifiedTypeName name="javax.xml.parsers.DocumentBuilderFactory"/>
 <fullyQualifiedTypeName name="javax.xml.parsers.DocumentBuilder"/>
 <fullyQualifiedTypeName name="org.w3c.dom.Document"/>
@@ -48,7 +47,6 @@
 <fullyQualifiedTypeName name="java.util.Collections"/>
 <fullyQualifiedTypeName name="com.mysql.cj.Session"/>
 <fullyQualifiedTypeName name="com.ssafy.util.KMP"/>
-<fullyQualifiedTypeName name="java.util.LinkedList"/>
 <fullyQualifiedTypeName name="java.lang.Comparable"/>
 <fullyQualifiedTypeName name="com.ssafy.model.dto.MemberException"/>
 <fullyQualifiedTypeName name="org.apache.ibatis.session.RowBounds"/>
@@ -60,4 +58,6 @@
 <fullyQualifiedTypeName name="com.ssafy.model.dto.PageBean"/>
 <fullyQualifiedTypeName name="com.ssafy.model.dao.ProductDao"/>
 <fullyQualifiedTypeName name="com.ssafy.model.dao.ProductDaoImpl"/>
+<fullyQualifiedTypeName name="java.util.LinkedList"/>
+<fullyQualifiedTypeName name="java.util.Deque"/>
 </qualifiedTypeNameHistroy>

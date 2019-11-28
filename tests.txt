@@ -16,6 +16,7 @@ Servlet에서 결과 페이지로 값이 전달되지 않는거 (request에 담�
 execute query 잘 수행되는지
 
 
+
 모델링 교재 각 단원별 요약
 select 조건절
 함수 쓸줄 알아야한다

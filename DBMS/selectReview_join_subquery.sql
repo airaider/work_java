@@ -383,4 +383,4 @@ using (cno)
 order by amount desc;
 
 -- 상품을 기준으로 올해 판매한 상품들을 월별 Pivot테이블 형태로 조회 하시오 
-
+select * from member;

@@ -97,4 +97,5 @@ left join dept
 using (deptno);
 
 select * from Employee;
+select * from member;
 

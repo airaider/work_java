@@ -132,4 +132,3 @@ CREATE TABLE `ssafydb`.`user_food` (
 `cnt` INT NOT NULL,
 PRIMARY KEY (`no`));
 
-insert into user_food('id', 'code', 'cnt') values('ssafy', 1, 3);

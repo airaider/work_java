@@ -142,12 +142,23 @@ GROUP BY deptno WITH ROLLUP
 ORDER BY deptno;
 
 
+select * from product;
+
+insert into product values('NT950SBE','노트북Pen S','노트북',
+	'2019.1.1', '삼성', 2660000, '극강의 퍼포먼스, 혁신의 S펜');
+
+insert into product values('NT930XBE','노트북9 Always','노트북',
+	'2019.5.5', '삼성', 1760000, '충전은 빠르게 사용은 여유롭게');
+
+commit;
 
 
+insert into member values('admin', 'admin', 'admin', 'admin',
+	'admin@ssafy.com', 'www.ssafy.com', 'seoul', '독서');
+    
+insert into member values('ssafy', 'ssafy', 'ssafy', 'ssafy',
+	'java@ssafy.com', 'www.ssafy.com', 'seoul', '독서 여행');
 
+commit;
 
-
-
-
-
-
+select * from food_member;
